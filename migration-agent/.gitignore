@@ -1,0 +1,25 @@
+# ─── Build outputs ────────────────────────────────────────────────────────────
+dist/
+node_modules/
+
+# ─── Playwright outputs ───────────────────────────────────────────────────────
+playwright-report/
+blob-report/
+test-results/
+.playwright-cache/
+
+# ─── Auth & secrets ───────────────────────────────────────────────────────────
+.env
+auth-state.json
+
+# ─── Staging (in-progress migration batches) ──────────────────────────────────
+src/staging/
+
+# ─── Screenshots (large binary evidence files) ────────────────────────────────
+analysis/screenshots/
+
+# ─── OS & editor ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+*.log

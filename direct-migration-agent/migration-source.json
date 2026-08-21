@@ -1,0 +1,19 @@
+{
+  "seleniumSourceRoot": "C:\\Users\\vramasubbu\\Framework\\sawsLab-Selenium-Web-API",
+  "migrationOutputPath": "C:\\Users\\vramasubbu\\Framework\\selenium migration",
+  "activeProject": "direct-migration",
+  "migrationTool": "selenium-playwright-direct",
+  "projects": {
+    "direct-migration": {
+      "path": "C:\\Users\\vramasubbu\\Framework\\sawsLab-Selenium-Web-API",
+      "type": "Java",
+      "language": "Java",
+      "migrationStrategy": "direct",
+      "outputFolder": "sawslab-playwright-dm",
+      "description": "Direct Migration: Selenium → Playwright TypeScript (single pass, no analysis docs, no user stories)",
+      "invokeWith": "Migrate the Selenium framework directly",
+      "agent": ".github/prompts/selenium-direct-migration.agent.md",
+      "features": ["ApiPosts", "WebLoginAndCart"]
+    }
+  }
+}

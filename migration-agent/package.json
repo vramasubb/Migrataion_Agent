@@ -1,0 +1,14 @@
+{
+  "name": "migration-agent",
+  "version": "1.0.0",
+  "description": "Migration agent — orchestrates Selenium → Playwright migration pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate":      "node scripts/migrate.mjs",
+    "migrate:demo": "cross-env DEMO=1 node scripts/migrate.mjs --headed"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

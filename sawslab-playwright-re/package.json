@@ -1,0 +1,20 @@
+{
+  "name": "sawslab-playwright-re",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript — Reverse Engineering Migration from Selenium (SauceDemo + JSONPlaceholder). Full pipeline: Analysis → User Stories → Gate 1 → Implementation.",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "test:headed": "npx playwright test --project=chromium --headed --workers=1",
+    "test:smoke": "npx playwright test --project=chromium --grep @smoke",
+    "test:web": "npx playwright test src/modules/web-login-and-cart --project=chromium",
+    "test:api": "npx playwright test src/modules/api-posts --project=chromium",
+    "report": "npx playwright show-report playwright-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "dotenv": "^16.4.0"
+  }
+}

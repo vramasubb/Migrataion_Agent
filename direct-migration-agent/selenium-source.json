@@ -1,0 +1,19 @@
+{
+  "seleniumSourceRoot": "C:\\Users\\vramasubbu\\Framework\\sawsLab-Selenium-Web-API",
+  "migrationOutputPath": "C:\\Users\\vramasubbu\\Framework\\selenium migration",
+  "activeProject": "direct-migration",
+  "migrationTool": "selenium-playwright-direct",
+  "projects": {
+    "direct-migration": {
+      "path": "C:\\Users\\vramasubbu\\Framework\\sawsLab-Selenium-Web-API",
+      "type": "Java",
+      "language": "Java",
+      "migrationStrategy": "direct",
+      "outputFolder": "sawslab-playwright-dm",
+      "features": ["ApiPosts", "WebLoginAndCart"],
+      "webBaseUrl": "https://www.saucedemo.com",
+      "apiBaseUrl": "https://jsonplaceholder.typicode.com",
+      "notes": "Direct migration — Selenium source translated 1:1 to Playwright. No analysis docs, no user stories."
+    }
+  }
+}

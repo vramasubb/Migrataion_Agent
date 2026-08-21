@@ -1,0 +1,13 @@
+{
+  "name": "direct-migration-agent",
+  "version": "1.0.0",
+  "description": "Direct Migration Agent — Selenium → Playwright TypeScript (single pass, no user stories, no analysis docs)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate": "node scripts/migrate.mjs"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

@@ -1,0 +1,33 @@
+# ── Node / npm ────────────────────────────────────────────────────────────────
+node_modules/
+dist/
+.npm/
+
+# ── Playwright ────────────────────────────────────────────────────────────────
+playwright-report/
+blob-report/
+test-results/
+.playwright-cache/
+
+# ── Java / Maven ──────────────────────────────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+.env
+auth-state.json
+*.local
+
+# ── VS Code ───────────────────────────────────────────────────────────────────
+.vscode/settings.json
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+
+# ── Staging / build artefacts ─────────────────────────────────────────────────
+src/staging/
+analysis/screenshots/
