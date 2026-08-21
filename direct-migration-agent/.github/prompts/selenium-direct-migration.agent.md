@@ -106,19 +106,23 @@ Run the Selenium source suite BEFORE writing any code.
    cd "<projects[direct-migration].path>/API"
    ```
 
-2. Run the full Cucumber suite:
+2. Run the full Cucumber suite with screenshots enabled:
    ```
    mvn test 2>&1 | tee target/run.log
    ```
    - If Maven unavailable: note "Source run skipped — Maven not on PATH" and continue.
+   - Screenshots for @web scenarios are **automatically embedded** in the Cucumber HTML report
+     via `Hooks.java` `@After` hook (`scenario.attach(screenshot, "image/png", ...)`)
 
 3. Copy evidence to output project:
    ```
-   mkdir sawslab-playwright-dm\analysis\evidence\selenium
+   mkdir sawslab-playwright-dm\analysis\evidence\selenium\screenshots
    copy target\cucumber-reports\cucumber-report.html  sawslab-playwright-dm\analysis\evidence\selenium\
    copy target\cucumber-reports\cucumber-report.json  sawslab-playwright-dm\analysis\evidence\selenium\
    copy target\run.log  sawslab-playwright-dm\analysis\evidence\selenium\
    ```
+   > Source screenshots are **embedded inside `cucumber-report.html`** (failures only).
+   > Open `analysis/evidence/selenium/cucumber-report.html` in a browser to see them.
 
 4. Create `sawslab-playwright-dm/analysis/MIGRATION-EVIDENCE.md` with the source section:
 
@@ -127,24 +131,46 @@ Run the Selenium source suite BEFORE writing any code.
 
 > **Strategy:** Direct Migration — Selenium → Playwright (no analysis docs, no user stories)
 > **Source:** Selenium + Cucumber (Java) → **Target:** Playwright TypeScript
-> **Output project:** sawslab-playwright-dm/
+
+---
 
 ## 1. Source Execution — Selenium + Cucumber
-| Run date | Command | Report |
-|---|---|---|
-| <date> | `mvn test` in `<sourceRoot>/API` | `analysis/evidence/selenium/cucumber-report.html` |
+
+| Run date | Command | Report | Screenshots |
+|---|---|---|---|
+| <date> | `mvn test` in `<sourceRoot>/API` | `analysis/evidence/selenium/cucumber-report.html` | Embedded in HTML report |
 
 ### Source Results
-| # | Feature | Scenario | Tags | Status | Screenshot |
+| # | Feature | Scenario | Tags | Status | Screenshot Location |
 |---|---|---|---|---|---|
 (fill from cucumber-report.json or feature file inventory)
+**Screenshot note:** @web failure screenshots are embedded in `cucumber-report.html`.
+@api tests have no browser — N/A.
 > Total: X passed, Y failed
 
+---
+
 ## 2. Target Execution — Playwright TypeScript
-> _Populated after Translate + Run completes._
+> _Populated after Run completes._
+
+---
 
 ## 3. Migration Mapping — Direct Translation Evidence
-> _Populated after Translate + Run completes._
+> _Populated after Run completes._
+
+---
+
+## 4. Screenshot Evidence
+
+### Source Screenshots (Selenium)
+| Test | Screenshot | Location |
+|---|---|---|
+| (from cucumber-report.html) | Embedded in HTML | `analysis/evidence/selenium/cucumber-report.html` |
+
+### Target Screenshots (Playwright)
+| Test | Screenshot | Location |
+|---|---|---|
+| (generated after migration) | `test-results/<folder>/test-finished-1.png` | `sawslab-playwright-dm/test-results/` |
 ```
 
 ---
@@ -265,27 +291,54 @@ Repeat fix → run → fix until all green.
 
 After all tests pass, update `sawslab-playwright-dm/analysis/MIGRATION-EVIDENCE.md`:
 
-**Section 2 — Target Execution:**
+**Section 2 — Target Execution (Playwright):**
 ```markdown
 ## 2. Target Execution — Playwright TypeScript
-| Run date | Command | Report |
-|---|---|---|
-| <date> | `npx playwright test --workers=1 --reporter=html,line` | `playwright-report/index.html` |
+| Run date | Command | Report | Screenshots |
+|---|---|---|---|
+| <date> | `npx playwright test --workers=1 --reporter=html,line` | `playwright-report/index.html` | `test-results/` subfolders |
 
-| # | Suite | Test Name | Tags | Status | Screenshot |
+| # | Suite | Test Name | Tags | Status | Screenshot File |
 |---|---|---|---|---|---|
-(one row per test — screenshots in test-results/ for web tests)
+| 1 | Web: SauceDemo Login | Successful login | @smoke @positive | ✅ PASS | `test-results/modules-web-.../test-finished-1.png` |
+(API tests: N/A — no browser)
 > Total: X passed | HTML report: playwright-report/index.html
+> Screenshots: test-results/<test-folder>/test-finished-1.png (all web tests captured)
 ```
 
 **Section 3 — Migration Mapping:**
 ```markdown
 ## 3. Migration Mapping — Direct Translation Evidence
-> Strategy: Direct (Selenium → Playwright, one pass, no intermediate artefacts)
-| # | Source Scenario (.feature) | Source Tags | Playwright Test | Selenium | Playwright | Directly Migrated |
-|---|---|---|---|---|---|---|
-| 1 | <scenario name> | <tags> | <playwright test name> | ✅ | ✅ | ✅ |
-> Migration completeness: X/X (100%) | Reverse engineering used: None | Analysis docs created: None
+| # | Source Scenario (.feature) | Playwright Test | Selenium | Playwright | Migrated |
+|---|---|---|---|---|---|
+| 1 | <scenario name> | <playwright test name> | ✅ / ⚠️ | ✅ | ✅ |
+> Completeness: X/X (100%) | Reverse engineering: None | Analysis docs: None
+```
+
+**Section 4 — Screenshot Evidence (MANDATORY for business sign-off):**
+```markdown
+## 4. Screenshot Evidence
+
+> Business proof: screenshots show the application running under both frameworks.
+> Open both HTML reports to see all test screenshots with full context.
+
+### Source Screenshots — Selenium + Cucumber
+| Evidence Type | Location | View With |
+|---|---|---|
+| Failure screenshots (embedded) | `analysis/evidence/selenium/cucumber-report.html` | Any browser |
+| Full execution log | `analysis/evidence/selenium/run.log` | Text editor |
+
+### Target Screenshots — Playwright
+| Evidence Type | Location | View With |
+|---|---|---|
+| Per-test screenshots (ALL web tests) | `test-results/<test-folder>/test-finished-1.png` | Image viewer |
+| Full interactive report with screenshots | `playwright-report/index.html` | `npx playwright show-report` |
+
+### Screenshot Summary
+| Test | Source Screenshot | Playwright Screenshot |
+|---|---|---|
+| Successful login | In cucumber-report.html (pass = no screenshot) | `test-results/.../test-finished-1.png` |
+| Invalid credentials | In cucumber-report.html (failure = screenshot embedded) | `test-results/.../test-finished-1.png` |
 ```
 
 ---

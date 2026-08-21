@@ -33,6 +33,7 @@ function emit(level, message) {
 
 // Maps (tool, strategy) → { agentFolder, promptFile }
 // agentFolder is relative to __dirname/.. (workspace root)
+// RE uses 'migration-agent' (folder rename to 're-migration-agent' pending VS Code file lock)
 const AGENT_CONFIG = {
   'selenium-playwright': {
     'reverse-engineering': { agentFolder: 'migration-agent',        promptFile: 'selenium-re-migration.agent.md' },
@@ -59,8 +60,14 @@ const AGENT_CONFIG = {
 function resolveAgent(tool, strategy) {
   const toolConfig = AGENT_CONFIG[tool];
   if (!toolConfig) return { agentFolder: 'migration-agent', promptFile: 'selenium-re-migration.agent.md' };
-  // fall back to reverse-engineering if the requested strategy has no entry
-  return toolConfig[strategy] || toolConfig['reverse-engineering'] || Object.values(toolConfig)[0];
+  const entry = toolConfig[strategy] || toolConfig['reverse-engineering'] || Object.values(toolConfig)[0];
+  // Support both 'migration-agent' and 're-migration-agent' folder names
+  const folder = entry.agentFolder;
+  const reAlias = path.resolve(__dirname, '..', 're-migration-agent');
+  if (folder === 'migration-agent' && fs.existsSync(reAlias)) {
+    return { ...entry, agentFolder: 're-migration-agent' };
+  }
+  return entry;
 }
 
 // ─── Routes ───────────────────────────────────────────────────────

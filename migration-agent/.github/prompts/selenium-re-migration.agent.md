@@ -290,27 +290,57 @@ Repeat fix → run → fix until all green.
 
 After all tests pass, update `sawslab-playwright-re/analysis/MIGRATION-EVIDENCE.md`:
 
-**Section 2 — Target Execution:**
+**Section 2 — Target Execution (Playwright):**
 ```markdown
 ## 2. Target Execution — Playwright TypeScript
-| Run date | Command | Report |
-|---|---|---|
-| <date> | `npx playwright test --workers=1 --reporter=html,line` | `playwright-report/index.html` |
+| Run date | Command | Report | Screenshots |
+|---|---|---|---|
+| <date> | `npx playwright test --workers=1 --reporter=html,line` | `playwright-report/index.html` | `test-results/` subfolders |
 
-| # | Suite | Test Name | Tags | Status | Screenshot |
-|---|---|---|---|---|---|
-(one row per test)
+| # | Suite | Test Name | Story/AC | Tags | Status | Screenshot File |
+|---|---|---|---|---|---|---|
+| 1 | Web: SauceDemo Login | Successful login | WEB-01/AC-1 | @smoke @positive | ✅ PASS | `test-results/modules-web-.../test-finished-1.png` |
+(API tests: N/A — no browser)
 > Total: X passed | HTML report: playwright-report/index.html
+> Screenshots: test-results/<test-folder>/test-finished-1.png (all web tests captured)
 ```
 
 **Section 3 — Migration Mapping:**
 ```markdown
 ## 3. Migration Mapping — RE Evidence
-> Strategy: Reverse Engineering (Selenium → Analysis → Stories → Playwright)
+> Strategy: Reverse Engineering (Selenium → Analysis → User Stories → Playwright)
 | # | Source Scenario | Story/AC | Playwright Test | Selenium | Playwright | Migrated |
 |---|---|---|---|---|---|---|
 | 1 | <scenario name> | <Story>-<N>/AC-<N> | <playwright test> | ✅ | ✅ | ✅ |
 > Migration completeness: X/X (100%)
+```
+
+**Section 4 — Screenshot Evidence (MANDATORY for business sign-off):**
+```markdown
+## 4. Screenshot Evidence
+
+> Business proof: screenshots show the application running under both frameworks.
+> Source screenshots prove the original tests worked.
+> Target screenshots prove the migrated tests work in Playwright.
+
+### Source Screenshots — Selenium + Cucumber
+| Evidence Type | Location | View With |
+|---|---|---|
+| Failure screenshots (embedded) | `analysis/evidence/selenium/cucumber-report.html` | Any browser |
+| Full execution log | `analysis/evidence/selenium/run.log` | Text editor |
+
+### Target Screenshots — Playwright
+| Evidence Type | Location | View With |
+|---|---|---|
+| Per-test screenshots (ALL web tests) | `test-results/<test-folder>/test-finished-1.png` | Image viewer |
+| Full interactive report with screenshots | `playwright-report/index.html` | `npx playwright show-report` |
+
+### Screenshot Comparison (Source vs Target)
+| Test | Source Screenshot | Playwright Screenshot |
+|---|---|---|
+| Successful login | In cucumber-report.html (pass = no screenshot; failure = embedded) | `test-results/.../test-finished-1.png` |
+| Invalid credentials | Embedded in cucumber-report.html on failure | `test-results/.../test-finished-1.png` |
+| Add to cart | Embedded in cucumber-report.html on failure | `test-results/.../test-finished-1.png` |
 ```
 
 ---

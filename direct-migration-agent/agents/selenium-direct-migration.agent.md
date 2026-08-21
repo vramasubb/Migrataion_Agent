@@ -1,6 +1,6 @@
 ---
 mode: agent
-description: "Direct Migration: Selenium → Playwright TypeScript in a single translation pass. No analysis docs, no user stories, no first gate. Code-to-code translation with one review gate and full evidence report. Output project: sawslab-playwright-dm/. Invoke with: Migrate the Selenium framework directly"
+description: "Direct Migration: Selenium Framework → Playwright TypeScript. Single-pass code-to-code translation. SKIPS: analysis docs, user stories, business review gate. One final gate only. Invoke with: Migrate the Selenium framework directly"
 ---
 
 # Selenium → Playwright: Direct Migration
@@ -8,22 +8,26 @@ description: "Direct Migration: Selenium → Playwright TypeScript in a single t
 You are a Senior Test Automation Architect executing the **Direct Migration** pipeline.
 Run it **yourself, inline** — do not delegate to other agents.
 
-> **What makes this pipeline "Direct":**
-> The Selenium source code is read once and translated **directly** to Playwright TypeScript
-> in a single pass. No intermediate analysis documents. No user stories. No first gate.
-> Every Playwright test maps 1:1 to a Cucumber scenario — the source code is the spec.
-> This path is faster than the Reverse Engineering path and is suited for technical teams
-> who want running Playwright tests as quickly as possible.
+> ⚠️ **DIRECT MIGRATION — NO USER STORIES**
+> This pipeline translates Selenium source code **directly** into Playwright TypeScript.
+> The following steps are **permanently skipped** — they belong only to Reverse Engineering:
+> ❌ Stage 1: analysis.md generation
+> ❌ Stage 1: locators.md generation
+> ❌ Stage 2: user_stories.md generation
+> ❌ Gate 1: business review
+> The source code IS the specification. Start writing Playwright TypeScript immediately after pre-flight.
 
 ## Migration Path
 
 ```
 Selenium Source Code
-      ↓  Pre-Flight: run source tests, capture evidence
-      ↓  Translate: read all source files → generate Playwright TypeScript directly
-      ↓  Run + Heal → all tests green
-      ↓  Evidence → complete MIGRATION-EVIDENCE.md
-      ⏸  GATE 1: Final Review — stop, show evidence, wait for "approved"
+      ↓  PRE-FLIGHT: run source tests, capture evidence
+      |  [❌ SKIP: analysis docs]  [❌ SKIP: user stories]  [❌ SKIP: Gate 1]
+      ↓  TRANSLATE: read ALL source files → generate Playwright TypeScript in one pass
+      ↓  RUN: npx playwright test --workers=1 --reporter=html,line
+      ↓  HEAL: fix failures until all green
+      ↓  EVIDENCE: complete MIGRATION-EVIDENCE.md
+      ⏸  GATE 1: Final Review — show evidence, wait for "approved"
 ```
 
 ## Comparison with Reverse Engineering Path
@@ -76,17 +80,20 @@ The Selenium source project is **external and read-only** — never write files 
 ## Pipeline
 
 ```
-PRE-FLIGHT  →  Run Selenium source suite  →  sawslab-playwright-dm/analysis/evidence/selenium/
-              →  Create sawslab-playwright-dm/analysis/MIGRATION-EVIDENCE.md (source section)
-TRANSLATE   →  Read ALL source files → generate src/modules/<feature>/ directly
-              →  No analysis.md, no locators.md, no user_stories.md
-Run         →  npx playwright test --workers=1 --reporter=html,line
-Heal        →  fix failures one feature at a time until green
+PRE-FLIGHT  →  Run Selenium source suite  →  analysis/evidence/selenium/
+              →  Create analysis/MIGRATION-EVIDENCE.md (source section)
+[❌ SKIP]    →  Stage 1: analysis.md + locators.md   ← RE only, NOT needed here
+[❌ SKIP]    →  Stage 2: user_stories.md              ← RE only, NOT needed here
+[❌ SKIP]    →  Gate 1: business review               ← RE only, NOT needed here
+TRANSLATE   →  Read ALL Selenium source files → generate src/modules/<feature>/ directly
+RUN         →  npx playwright test --workers=1 --reporter=html,line
+HEAL        →  fix failures one feature at a time until green
+              →  use playwright-healer.agent.md for complex failures
 EVIDENCE    →  Update MIGRATION-EVIDENCE.md (target section + mapping table)
-GATE 1      →  STOP — show evidence report + results — wait for "approved"
+GATE 1      →  STOP — show evidence report — wait for "approved"
 ```
 
-**One gate only. Never auto-advance past it.**
+**One gate only. If you find yourself writing analysis.md or user_stories.md, STOP — you are running the wrong pipeline.**
 
 ---
 
@@ -99,19 +106,23 @@ Run the Selenium source suite BEFORE writing any code.
    cd "<projects[direct-migration].path>/API"
    ```
 
-2. Run the full Cucumber suite:
+2. Run the full Cucumber suite with screenshots enabled:
    ```
    mvn test 2>&1 | tee target/run.log
    ```
    - If Maven unavailable: note "Source run skipped — Maven not on PATH" and continue.
+   - Screenshots for @web scenarios are **automatically embedded** in the Cucumber HTML report
+     via `Hooks.java` `@After` hook (`scenario.attach(screenshot, "image/png", ...)`)
 
 3. Copy evidence to output project:
    ```
-   mkdir sawslab-playwright-dm\analysis\evidence\selenium
+   mkdir sawslab-playwright-dm\analysis\evidence\selenium\screenshots
    copy target\cucumber-reports\cucumber-report.html  sawslab-playwright-dm\analysis\evidence\selenium\
    copy target\cucumber-reports\cucumber-report.json  sawslab-playwright-dm\analysis\evidence\selenium\
    copy target\run.log  sawslab-playwright-dm\analysis\evidence\selenium\
    ```
+   > Source screenshots are **embedded inside `cucumber-report.html`** (failures only).
+   > Open `analysis/evidence/selenium/cucumber-report.html` in a browser to see them.
 
 4. Create `sawslab-playwright-dm/analysis/MIGRATION-EVIDENCE.md` with the source section:
 
@@ -120,24 +131,46 @@ Run the Selenium source suite BEFORE writing any code.
 
 > **Strategy:** Direct Migration — Selenium → Playwright (no analysis docs, no user stories)
 > **Source:** Selenium + Cucumber (Java) → **Target:** Playwright TypeScript
-> **Output project:** sawslab-playwright-dm/
+
+---
 
 ## 1. Source Execution — Selenium + Cucumber
-| Run date | Command | Report |
-|---|---|---|
-| <date> | `mvn test` in `<sourceRoot>/API` | `analysis/evidence/selenium/cucumber-report.html` |
+
+| Run date | Command | Report | Screenshots |
+|---|---|---|---|
+| <date> | `mvn test` in `<sourceRoot>/API` | `analysis/evidence/selenium/cucumber-report.html` | Embedded in HTML report |
 
 ### Source Results
-| # | Feature | Scenario | Tags | Status | Screenshot |
+| # | Feature | Scenario | Tags | Status | Screenshot Location |
 |---|---|---|---|---|---|
 (fill from cucumber-report.json or feature file inventory)
+**Screenshot note:** @web failure screenshots are embedded in `cucumber-report.html`.
+@api tests have no browser — N/A.
 > Total: X passed, Y failed
 
+---
+
 ## 2. Target Execution — Playwright TypeScript
-> _Populated after Translate + Run completes._
+> _Populated after Run completes._
+
+---
 
 ## 3. Migration Mapping — Direct Translation Evidence
-> _Populated after Translate + Run completes._
+> _Populated after Run completes._
+
+---
+
+## 4. Screenshot Evidence
+
+### Source Screenshots (Selenium)
+| Test | Screenshot | Location |
+|---|---|---|
+| (from cucumber-report.html) | Embedded in HTML | `analysis/evidence/selenium/cucumber-report.html` |
+
+### Target Screenshots (Playwright)
+| Test | Screenshot | Location |
+|---|---|---|
+| (generated after migration) | `test-results/<folder>/test-finished-1.png` | `sawslab-playwright-dm/test-results/` |
 ```
 
 ---
@@ -258,27 +291,54 @@ Repeat fix → run → fix until all green.
 
 After all tests pass, update `sawslab-playwright-dm/analysis/MIGRATION-EVIDENCE.md`:
 
-**Section 2 — Target Execution:**
+**Section 2 — Target Execution (Playwright):**
 ```markdown
 ## 2. Target Execution — Playwright TypeScript
-| Run date | Command | Report |
-|---|---|---|
-| <date> | `npx playwright test --workers=1 --reporter=html,line` | `playwright-report/index.html` |
+| Run date | Command | Report | Screenshots |
+|---|---|---|---|
+| <date> | `npx playwright test --workers=1 --reporter=html,line` | `playwright-report/index.html` | `test-results/` subfolders |
 
-| # | Suite | Test Name | Tags | Status | Screenshot |
+| # | Suite | Test Name | Tags | Status | Screenshot File |
 |---|---|---|---|---|---|
-(one row per test — screenshots in test-results/ for web tests)
+| 1 | Web: SauceDemo Login | Successful login | @smoke @positive | ✅ PASS | `test-results/modules-web-.../test-finished-1.png` |
+(API tests: N/A — no browser)
 > Total: X passed | HTML report: playwright-report/index.html
+> Screenshots: test-results/<test-folder>/test-finished-1.png (all web tests captured)
 ```
 
 **Section 3 — Migration Mapping:**
 ```markdown
 ## 3. Migration Mapping — Direct Translation Evidence
-> Strategy: Direct (Selenium → Playwright, one pass, no intermediate artefacts)
-| # | Source Scenario (.feature) | Source Tags | Playwright Test | Selenium | Playwright | Directly Migrated |
-|---|---|---|---|---|---|---|
-| 1 | <scenario name> | <tags> | <playwright test name> | ✅ | ✅ | ✅ |
-> Migration completeness: X/X (100%) | Reverse engineering used: None | Analysis docs created: None
+| # | Source Scenario (.feature) | Playwright Test | Selenium | Playwright | Migrated |
+|---|---|---|---|---|---|
+| 1 | <scenario name> | <playwright test name> | ✅ / ⚠️ | ✅ | ✅ |
+> Completeness: X/X (100%) | Reverse engineering: None | Analysis docs: None
+```
+
+**Section 4 — Screenshot Evidence (MANDATORY for business sign-off):**
+```markdown
+## 4. Screenshot Evidence
+
+> Business proof: screenshots show the application running under both frameworks.
+> Open both HTML reports to see all test screenshots with full context.
+
+### Source Screenshots — Selenium + Cucumber
+| Evidence Type | Location | View With |
+|---|---|---|
+| Failure screenshots (embedded) | `analysis/evidence/selenium/cucumber-report.html` | Any browser |
+| Full execution log | `analysis/evidence/selenium/run.log` | Text editor |
+
+### Target Screenshots — Playwright
+| Evidence Type | Location | View With |
+|---|---|---|
+| Per-test screenshots (ALL web tests) | `test-results/<test-folder>/test-finished-1.png` | Image viewer |
+| Full interactive report with screenshots | `playwright-report/index.html` | `npx playwright show-report` |
+
+### Screenshot Summary
+| Test | Source Screenshot | Playwright Screenshot |
+|---|---|---|
+| Successful login | In cucumber-report.html (pass = no screenshot) | `test-results/.../test-finished-1.png` |
+| Invalid credentials | In cucumber-report.html (failure = screenshot embedded) | `test-results/.../test-finished-1.png` |
 ```
 
 ---
