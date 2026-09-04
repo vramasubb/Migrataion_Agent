@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0",
+  "engines": {
+    "web": {
+      "skipPatterns": [
+        "^\\s*(package|import)\\s+",
+        "^\\s*(public|private|protected)?\\s*(class|interface)\\s+",
+        "^\\s*(public|private|protected)\\s+.*\\)\\s*\\{\\s*$",
+        "^\\s*[@{}]\\s*$",
+        "^\\s*//",
+        "Thread\\.sleep\\s*\\("
+      ],
+      "actions": [
+        {
+          "id": "locator.by.declaration",
+          "standardActionType": "Identify Element",
+          "objectType": "WebElement",
+          "pattern": "(?:private|protected|public)?\\s*(?:static\\s+)?(?:final\\s+)?By\\s+(\\w+)\\s*=\\s*By\\.(id|name|className|cssSelector|xpath|linkText|partialLinkText|tagName)\\(\"([^\"]+)\"\\)\\s*;",
+          "targetAction": "locator",
+          "valueTemplate": "const {group1} = page.locator('{locator:group2:group3}');"
+        },
+        {
+          "id": "navigate.driver.get",
+          "standardActionType": "Navigate",
+          "objectType": "WebElement",
+          "pattern": "driver\\.get\\((.+)\\)\\s*;",
+          "targetAction": "page.goto",
+          "valueTemplate": "await page.goto({group1});"
+        },
+        {
+          "id": "element.direct.click",
+          "standardActionType": "Click",
+          "objectType": "Button",
+          "pattern": "driver\\.findElement\\(By\\.(id|name|className|cssSelector|xpath|linkText|partialLinkText|tagName)\\(\"([^\"]+)\"\\)\\)\\.click\\(\\)\\s*;",
+          "targetAction": "locator.click",
+          "valueTemplate": "await page.locator('{locator:group1:group2}').click();"
+        },
+        {
+          "id": "element.variable.click",
+          "standardActionType": "Click",
+          "objectType": "Button",
+          "pattern": "(\\w+)\\.click\\(\\)\\s*;",
+          "targetAction": "locator.click",
+          "valueTemplate": "await {group1}.click();"
+        },
+        {
+          "id": "element.direct.type",
+          "standardActionType": "Set/Type Text",
+          "objectType": "TextField",
+          "pattern": "driver\\.findElement\\(By\\.(id|name|className|cssSelector|xpath)\\(\"([^\"]+)\"\\)\\)\\.sendKeys\\((.+)\\)\\s*;",
+          "targetAction": "locator.fill",
+          "valueTemplate": "await page.locator('{locator:group1:group2}').fill({group3});"
+        },
+        {
+          "id": "element.variable.type",
+          "standardActionType": "Set/Type Text",
+          "objectType": "TextField",
+          "pattern": "(\\w+)\\.sendKeys\\((.+)\\)\\s*;",
+          "targetAction": "locator.fill",
+          "valueTemplate": "await {group1}.fill({group2});"
+        },
+        {
+          "id": "element.variable.clear",
+          "standardActionType": "Clear Text",
+          "objectType": "TextField",
+          "pattern": "(\\w+)\\.clear\\(\\)\\s*;",
+          "targetAction": "locator.clear",
+          "valueTemplate": "await {group1}.clear();"
+        },
+        {
+          "id": "element.select.visible-text",
+          "standardActionType": "Select",
+          "objectType": "Select",
+          "pattern": "(?:new\\s+Select\\((\\w+)\\)|(\\w+))\\.selectByVisibleText\\((.+)\\)\\s*;",
+          "targetAction": "locator.selectOption",
+          "valueTemplate": "await {first:group1:group2}.selectOption({ label: {group3} });"
+        },
+        {
+          "id": "element.select.value",
+          "standardActionType": "Select",
+          "objectType": "Select",
+          "pattern": "(?:new\\s+Select\\((\\w+)\\)|(\\w+))\\.selectByValue\\((.+)\\)\\s*;",
+          "targetAction": "locator.selectOption",
+          "valueTemplate": "await {first:group1:group2}.selectOption({ value: {group3} });"
+        },
+        {
+          "id": "assert.text.equals",
+          "standardActionType": "Verify Text",
+          "objectType": "WebElement",
+          "pattern": "(?:Assert\\.assertEquals|assertEquals)\\((.+),\\s*(\\w+)\\.getText\\(\\)\\)\\s*;",
+          "targetAction": "expect.toHaveText",
+          "valueTemplate": "await expect({group2}).toHaveText({group1});"
+        },
+        {
+          "id": "assert.visible",
+          "standardActionType": "Verify Visible",
+          "objectType": "WebElement",
+          "pattern": "(?:Assert\\.assertTrue|assertTrue)\\((\\w+)\\.isDisplayed\\(\\)\\)\\s*;",
+          "targetAction": "expect.toBeVisible",
+          "valueTemplate": "await expect({group1}).toBeVisible();"
+        },
+        {
+          "id": "assert.enabled",
+          "standardActionType": "Verify Enabled",
+          "objectType": "WebElement",
+          "pattern": "(?:Assert\\.assertTrue|assertTrue)\\((\\w+)\\.isEnabled\\(\\)\\)\\s*;",
+          "targetAction": "expect.toBeEnabled",
+          "valueTemplate": "await expect({group1}).toBeEnabled();"
+        },
+        {
+          "id": "checkbox.check",
+          "standardActionType": "Check",
+          "objectType": "Checkbox",
+          "pattern": "(\\w+)\\.click\\(\\)\\s*;\\s*//\\s*check",
+          "targetAction": "locator.check",
+          "valueTemplate": "await {group1}.check();"
+        },
+        {
+          "id": "browser.refresh",
+          "standardActionType": "Refresh",
+          "objectType": "WebElement",
+          "pattern": "driver\\.navigate\\(\\)\\.refresh\\(\\)\\s*;",
+          "targetAction": "page.reload",
+          "valueTemplate": "await page.reload();"
+        },
+        {
+          "id": "browser.back",
+          "standardActionType": "Navigate Back",
+          "objectType": "WebElement",
+          "pattern": "driver\\.navigate\\(\\)\\.back\\(\\)\\s*;",
+          "targetAction": "page.goBack",
+          "valueTemplate": "await page.goBack();"
+        },
+        {
+          "id": "browser.forward",
+          "standardActionType": "Navigate Forward",
+          "objectType": "WebElement",
+          "pattern": "driver\\.navigate\\(\\)\\.forward\\(\\)\\s*;",
+          "targetAction": "page.goForward",
+          "valueTemplate": "await page.goForward();"
+        },
+        {
+          "id": "alert.accept",
+          "standardActionType": "Accept Alert",
+          "objectType": "WebElement",
+          "pattern": "driver\\.switchTo\\(\\)\\.alert\\(\\)\\.accept\\(\\)\\s*;",
+          "targetAction": "dialog.accept",
+          "valueTemplate": "page.once('dialog', dialog => dialog.accept());"
+        },
+        {
+          "id": "alert.dismiss",
+          "standardActionType": "Dismiss Alert",
+          "objectType": "WebElement",
+          "pattern": "driver\\.switchTo\\(\\)\\.alert\\(\\)\\.dismiss\\(\\)\\s*;",
+          "targetAction": "dialog.dismiss",
+          "valueTemplate": "page.once('dialog', dialog => dialog.dismiss());"
+        }
+      ]
+    }
+  }
+}

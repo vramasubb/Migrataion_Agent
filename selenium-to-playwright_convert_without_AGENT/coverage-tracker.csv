@@ -1,0 +1,17 @@
+Source Tool,Target Tool,Kind,Standard Type,Literal Source,Literal Target,Mapper Path,Status
+Selenium Java,Playwright TypeScript,Element,Element,WebElement,Locator,engines.web.objectTypes.WebElement,Fixture Validated
+Selenium Java,Playwright TypeScript,Element,Button,Button,Locator,engines.web.objectTypes.Button,Fixture Validated
+Selenium Java,Playwright TypeScript,Element,Text Field,TextField,Locator,engines.web.objectTypes.TextField,Fixture Validated
+Selenium Java,Playwright TypeScript,Element,Checkbox,Checkbox,Locator,engines.web.objectTypes.Checkbox,Mapper Validated
+Selenium Java,Playwright TypeScript,Element,Radio Button,RadioButton,Locator,engines.web.objectTypes.RadioButton,Mapper Validated
+Selenium Java,Playwright TypeScript,Element,Dropdown,Select,Locator,engines.web.objectTypes.Select,Mapper Validated
+Selenium Java,Playwright TypeScript,Element,Link,Link,Locator,engines.web.objectTypes.Link,Mapper Validated
+Selenium Java,Playwright TypeScript,Element,Table/Grid/DataGrid,Table,Locator,engines.web.objectTypes.Table,Mapper Validated
+Selenium Java,Playwright TypeScript,Action,Identify Element,By.*,page.locator,engines.web.actions.locator.by.declaration,Fixture Validated
+Selenium Java,Playwright TypeScript,Action,Navigate,driver.get,page.goto,engines.web.actions.navigate.driver.get,Fixture Validated
+Selenium Java,Playwright TypeScript,Action,Click,click,locator.click,engines.web.actions.element.variable.click,Fixture Validated
+Selenium Java,Playwright TypeScript,Action,Set/Type Text,sendKeys,locator.fill,engines.web.actions.element.variable.type,Fixture Validated
+Selenium Java,Playwright TypeScript,Action,Clear Text,clear,locator.clear,engines.web.actions.element.variable.clear,Mapper Validated
+Selenium Java,Playwright TypeScript,Action,Select,selectByVisibleText/selectByValue,locator.selectOption,engines.web.actions.element.select.*,Mapper Validated
+Selenium Java,Playwright TypeScript,Action,Verify Text,assertEquals/getText,expect.toHaveText,engines.web.actions.assert.text.equals,Mapper Validated
+Selenium Java,Playwright TypeScript,Action,Verify Visible,assertTrue/isDisplayed,expect.toBeVisible,engines.web.actions.assert.visible,Fixture Validated

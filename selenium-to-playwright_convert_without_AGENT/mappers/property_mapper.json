@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "sourceTool": "Selenium Java",
+  "targetTool": "Playwright TypeScript",
+  "engines": {
+    "web": {
+      "orLookup": {
+        "defaultPropertyPriority": ["testId", "id", "name", "ariaLabel", "role", "text", "css", "xpath"]
+      },
+      "objectTypes": {
+        "WebElement": {
+          "standardElementType": "Element",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "id", "name", "ariaLabel", "role", "text", "css", "xpath"],
+          "defaultActionMode": "auto-wait"
+        },
+        "Button": {
+          "standardElementType": "Button",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "role", "ariaLabel", "id", "name", "text", "css", "xpath"],
+          "defaultActionMode": "click"
+        },
+        "TextField": {
+          "standardElementType": "Text Field",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "label", "placeholder", "id", "name", "css", "xpath"],
+          "defaultActionMode": "fill"
+        },
+        "Checkbox": {
+          "standardElementType": "Checkbox",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "role", "label", "id", "name", "css", "xpath"],
+          "defaultActionMode": "check"
+        },
+        "RadioButton": {
+          "standardElementType": "Radio Button",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "role", "label", "id", "name", "css", "xpath"],
+          "defaultActionMode": "check"
+        },
+        "Select": {
+          "standardElementType": "Dropdown",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "label", "id", "name", "css", "xpath"],
+          "defaultActionMode": "selectOption"
+        },
+        "Link": {
+          "standardElementType": "Link",
+          "targetControlType": "Locator",
+          "propertyPriority": ["role", "text", "ariaLabel", "testId", "id", "css", "xpath"],
+          "defaultActionMode": "click"
+        },
+        "Table": {
+          "standardElementType": "Table/Grid/DataGrid",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testId", "role", "ariaLabel", "id", "css", "xpath"],
+          "defaultActionMode": "inspect"
+        }
+      },
+      "locatorStrategies": {
+        "id": "#{value}",
+        "name": "[name=\"{value}\"]",
+        "className": ".{value}",
+        "cssSelector": "{value}",
+        "xpath": "xpath={value}",
+        "linkText": "text={value}",
+        "partialLinkText": "text={value}",
+        "tagName": "{value}"
+      }
+    }
+  }
+}

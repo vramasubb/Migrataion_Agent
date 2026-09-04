@@ -1,0 +1,25 @@
+{
+  "propertyOverrides": {
+    "web": {
+      "Button": {
+        "propertyPriority": ["testId", "id", "role", "text", "css", "xpath"]
+      }
+    }
+  },
+  "actionOverrides": {
+    "web": {
+      "add": [
+        {
+          "id": "saucedemo.data-test.click",
+          "standardActionType": "Click",
+          "objectType": "Button",
+          "pattern": "driver\\.findElement\\(By\\.cssSelector\\(\"\\[data-test='([^']+)'\\]\"\\)\\)\\.click\\(\\)\\s*;",
+          "targetAction": "getByTestId.click",
+          "valueTemplate": "await page.getByTestId('{group1}').click();"
+        }
+      ],
+      "replace": [],
+      "remove": []
+    }
+  }
+}

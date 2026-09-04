@@ -1,0 +1,16 @@
+{
+  "propertyOverrides": {
+    "web": {
+      "WebElement": {
+        "propertyPriority": ["testId", "id", "name", "css", "xpath"]
+      }
+    }
+  },
+  "actionOverrides": {
+    "web": {
+      "add": [],
+      "replace": [],
+      "remove": []
+    }
+  }
+}

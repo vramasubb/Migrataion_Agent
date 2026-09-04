@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "property_mapper.schema.json",
+  "title": "Selenium to Playwright Property Mapper",
+  "type": "object",
+  "required": ["schemaVersion", "engines"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "sourceTool": { "type": "string" },
+    "targetTool": { "type": "string" },
+    "engines": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["orLookup", "objectTypes", "locatorStrategies"],
+        "properties": {
+          "orLookup": {
+            "type": "object",
+            "required": ["defaultPropertyPriority"]
+          },
+          "objectTypes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["standardElementType", "targetControlType", "propertyPriority"]
+            }
+          },
+          "locatorStrategies": { "type": "object" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
