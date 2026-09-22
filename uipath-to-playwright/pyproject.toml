@@ -1,0 +1,8 @@
+[project]
+name = "uipath-to-playwright-mapper"
+version = "1.0.0"
+description = "Mapper-driven UiPath Studio (XAML) to Playwright TypeScript migration"
+requires-python = ">=3.10"
+
+[tool.unittest]
+start-directory = "tests"

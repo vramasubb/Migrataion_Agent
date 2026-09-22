@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check Are you sure you want Popup",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "0bCRaaNeiEOPIcbDNB1pzw",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/0bCRaaNeiEOPIcbDNB1pzw",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/J6FqrCbGIEaAuPfKioeXZA",
+  "Created": "2026-07-29T09:57:38.5002912Z",
+  "Updated": "2026-07-29T09:57:38.5002912Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

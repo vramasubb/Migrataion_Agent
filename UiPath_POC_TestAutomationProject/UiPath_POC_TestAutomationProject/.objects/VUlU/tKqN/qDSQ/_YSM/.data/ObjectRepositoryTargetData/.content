@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dVkSt2hRdUGTGAu8uqpsaw" Reference="r0K4kMDipESog5sWOqxlQQ/_YSMY35GoU2OCvyUtvc4aw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" ContentHash="56iFh2DTMkGli7wT4JNO7w" DesignTimeRectangle="789, 454, 360, 50" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='PASSWORD_FIELD-inner' tag='INPUT' /&gt;" Guid="4a37f9ae-3c4a-40ce-82dc-daf383f07ba7" Reference="r0K4kMDipESog5sWOqxlQQ/_YSMY35GoU2OCvyUtvc4aw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="7df374c171bf1d12b9a635c9d2a28c7a.jpg" xmlns="">0zi7eOeB6bEC8KVWfiBEUdQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,715 @@
+{
+  "files": [
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Application\\CreateOBD.xaml",
+      "output": "src/pages/create-obd.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 23,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "sequence.variables",
+        "sequence.variables",
+        "read.range",
+        "for.each.row",
+        "multiple.assign",
+        "multiple.assign",
+        "ntypeinto",
+        "log.message",
+        "ntypeinto",
+        "log.message",
+        "step.status",
+        "nclick",
+        "step.status",
+        "log.message",
+        "ncheckstate",
+        "nclick",
+        "step.status",
+        "ngettext",
+        "assign",
+        "step.status",
+        "log.message",
+        "log.message",
+        "step.status"
+      ],
+      "action_records": [
+        {
+          "tag": "Sequence.Variables",
+          "selector": null,
+          "rendered": "let Out_Delivery = '';\nlet variable1 = '';\nlet in_ShippingPt = 'MDH1';\nlet in_Order = '70000971';\nlet TestID = '';"
+        },
+        {
+          "tag": "Sequence.Variables",
+          "selector": null,
+          "rendered": "let in_ExcelFilePath = undefined;\nlet out_Datatable = undefined;"
+        },
+        {
+          "tag": "ReadRange",
+          "selector": null,
+          "rendered": "out_Datatable = createObdData.map((row) => ({ ...row }));"
+        },
+        {
+          "tag": "ForEachRow",
+          "selector": null,
+          "rendered": "for (const CurrentRow of out_Datatable) {"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "in_ShippingPt = String(CurrentRow['ShippingPoint']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "in_Order = String(CurrentRow['OrderNumber']);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "text=Shipping Point",
+          "rendered": "await this.shippingPointLocator.fill(in_ShippingPt);"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Shipping Point entered : \"+in_ShippingPt);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "text=Order",
+          "rendered": "await this.orderLocator.fill(in_Order);"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Order entered : \"+in_Order);"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Enter initial details' + ': ' + \"Shipping Point: \"+in_ShippingPt+\", Sales order number: \"+in_Order);"
+        },
+        {
+          "tag": "NClick",
+          "selector": "text=Continue",
+          "rendered": "await this.continueLocator.click();"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Click on Continue' + ': ' + 'Continue button clicked');"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Continue Button Clicked\");"
+        },
+        {
+          "tag": "NCheckState",
+          "selector": "[data-testid=\"shellAppTitle-button\"]",
+          "rendered": "if (await this.shellAppTitleButtonLocator.isVisible()) {"
+        },
+        {
+          "tag": "NClick",
+          "selector": "text=Save",
+          "rendered": "await this.saveLocator.click();"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Click on Save' + ': ' + 'Save button clicked');"
+        },
+        {
+          "tag": "NGetText",
+          "selector": "text=Success Message Bar Outbound Delivery * has been saved",
+          "rendered": "Out_Delivery = await this.successMessageBarOutboundDeliveryHasLocator.innerText();"
+        },
+        {
+          "tag": "Assign",
+          "selector": null,
+          "rendered": "Out_Delivery = (Out_Delivery.match(/\\d+/) ?? [''])[0];"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate Outbound delivery created' + ': ' + \"Outbound delivery created: \"+Out_Delivery);"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"OBD Created - \"+Out_Delivery);"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Outbound Delivery create Screen not visible\");"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate Outbound delivery created' + ': ' + 'Outbound delivery not created');"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Application\\CreateSalesOrder.xaml",
+      "output": "src/pages/create-sales-order.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 31,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "sequence.variables",
+        "read.range",
+        "multiple.assign",
+        "multiple.assign",
+        "multiple.assign",
+        "multiple.assign",
+        "multiple.assign",
+        "multiple.assign",
+        "multiple.assign",
+        "multiple.assign",
+        "ntypeinto",
+        "ntypeinto",
+        "ntypeinto",
+        "ntypeinto",
+        "step.status",
+        "nclick",
+        "step.status",
+        "ntypeinto",
+        "ntypeinto",
+        "nmousescroll",
+        "ntypeinto",
+        "ntypeinto",
+        "step.status",
+        "nclick",
+        "step.status",
+        "ncheckstate",
+        "ngettext",
+        "matches",
+        "assign",
+        "step.status",
+        "step.status"
+      ],
+      "action_records": [
+        {
+          "tag": "Sequence.Variables",
+          "selector": null,
+          "rendered": "let DistChannel = '';\nlet Division = '';\nlet SalesOrg = '';\nlet OrderType = '';\nlet SoldTo = '';\nlet CustomerRef = '';\nlet Material = '';\nlet Quantity = '';\nlet dt_DataFromExcel = undefined;\nlet SalesOrdSuccessMsg = '';\nlet SalesOrderNo = '';\nlet TestID = '';"
+        },
+        {
+          "tag": "ReadRange",
+          "selector": null,
+          "rendered": "dt_DataFromExcel = createSalesOrderData.map((row) => ({ ...row }));"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "OrderType = String(dt_DataFromExcel[0]['OrderType']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "SalesOrg = String(dt_DataFromExcel[0]['SalesOrg']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "DistChannel = String(dt_DataFromExcel[0]['DistChannel']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "Division = String(dt_DataFromExcel[0]['Division']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "SoldTo = String(dt_DataFromExcel[0]['SoldTo']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "CustomerRef = String(dt_DataFromExcel[0]['CustomerRef']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "Material = String(dt_DataFromExcel[0]['Material']);"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "Quantity = String(dt_DataFromExcel[0]['Quantity']);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "#wnd[0]/usr/ctxtVBAK-AUART",
+          "rendered": "await this.wnd0UsrCtxtVbakAuartLocator.fill(OrderType);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "text=Sales Organization",
+          "rendered": "await this.salesOrganizationLocator.fill(SalesOrg);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "#wnd[0]/usr/ctxtVBAK-VTWEG",
+          "rendered": "await this.wnd0UsrCtxtVbakVtwegLocator.fill(DistChannel);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "#wnd[0]/usr/ctxtVBAK-SPART",
+          "rendered": "await this.wnd0UsrCtxtVbakSpartLocator.fill(Division);"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Enter Initial details' + ': ' + \"Order Type: \"+OrderType+\", Sales Org: \"+SalesOrg+\", Distribution Channel: \"+DistChannel+\", Division: \"+Division);"
+        },
+        {
+          "tag": "NClick",
+          "selector": "IFRAME",
+          "rendered": "await this.iframeLocator.click();"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Click on Continue' + ': ' + 'Continue button clicked');"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "text=Sold-to Party",
+          "rendered": "await this.soldToPartyLocator.fill(SoldTo);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "text=Cust. Reference",
+          "rendered": "await this.custReferenceLocator.fill(CustomerRef);"
+        },
+        {
+          "tag": "NMouseScroll",
+          "selector": null,
+          "rendered": "await page.mouse.wheel(0, 300);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "IFRAME",
+          "rendered": "await this.iframeLocator.fill(Material);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "IFRAME",
+          "rendered": "await this.iframeLocator.fill(Quantity);"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Enter details in Overview screen' + ': ' + \"Sold To: \"+SoldTo+\", Customer Reference: \"+CustomerRef+\", Material: \"+Material+\", Quantity: \"+Quantity);"
+        },
+        {
+          "tag": "NClick",
+          "selector": "IFRAME",
+          "rendered": "await this.iframeLocator.click();"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Click on Save' + ': ' + 'Save button clicked');"
+        },
+        {
+          "tag": "NCheckState",
+          "selector": "#wnd[0]/sbar_msg",
+          "rendered": "if (await this.wnd0SbarMsgLocator.isVisible()) {"
+        },
+        {
+          "tag": "NGetText",
+          "selector": "#wnd[0]/sbar_msg",
+          "rendered": "SalesOrdSuccessMsg = await this.wnd0SbarMsgLocator.innerText();"
+        },
+        {
+          "tag": "Matches",
+          "selector": null,
+          "rendered": "SalesOrderNo = (SalesOrdSuccessMsg.match(/(\\d{8})/) ?? [''])[0];"
+        },
+        {
+          "tag": "Assign",
+          "selector": null,
+          "rendered": "dt_DataFromExcel[0]['SalesOrderNo'] = SalesOrderNo;"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate sales order created' + ': ' + \"Sales order created: \"+SalesOrderNo);"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate sales order created' + ': ' + 'Sales order not created');"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Common\\Login.xaml",
+      "output": "src/pages/login.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 13,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "sequence.variables",
+        "get.robot.asset",
+        "get.robot.credential",
+        "nclick",
+        "ntypeinto",
+        "ntypeinto",
+        "step.status",
+        "nclick",
+        "ncheckstate",
+        "log.message",
+        "step.status",
+        "log.message",
+        "step.status"
+      ],
+      "action_records": [
+        {
+          "tag": "Sequence.Variables",
+          "selector": null,
+          "rendered": "let Username = '';\nlet URL = '';\nlet Password = '';\nlet TestID = '';"
+        },
+        {
+          "tag": "GetRobotAsset",
+          "selector": null,
+          "rendered": "URL = process.env.UIPATH_ASSET_D22_URL ?? '';"
+        },
+        {
+          "tag": "GetRobotCredential",
+          "selector": null,
+          "rendered": "Username = process.env.UIPATH_USERNAME ?? ''; Password = process.env.UIPATH_PASSWORD ?? '';"
+        },
+        {
+          "tag": "NClick",
+          "selector": "text=OK",
+          "rendered": "await this.okLocator.click();"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "#USERNAME_FIELD-inner",
+          "rendered": "await this.usernameFieldInnerLocator.fill(Username);"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "#PASSWORD_FIELD-inner",
+          "rendered": "await this.passwordFieldInnerLocator.fill(Password);"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Enter Username and Password' + ': ' + 'Username and Password entered');"
+        },
+        {
+          "tag": "NClick",
+          "selector": "#LOGIN_LINK",
+          "rendered": "await this.loginLinkLocator.click();"
+        },
+        {
+          "tag": "NCheckState",
+          "selector": "#userActionsMenuHeaderButton",
+          "rendered": "if (await this.userActionsMenuHeaderButtonLocator.isVisible()) {"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Login Successful\");"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate Login is successful' + ': ' + 'Login successful');"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Login Failed\");"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate Login is successful' + ': ' + 'Login Failed');"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Common\\Logout.xaml",
+      "output": "src/pages/logout.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 12,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "sequence.variables",
+        "ncheckstate",
+        "nclick",
+        "log.message",
+        "nclick",
+        "log.message",
+        "log.message",
+        "ncheckstate",
+        "nclick",
+        "step.status",
+        "log.message",
+        "log.message"
+      ],
+      "action_records": [
+        {
+          "tag": "Sequence.Variables",
+          "selector": null,
+          "rendered": "let TestID = '';"
+        },
+        {
+          "tag": "NCheckState",
+          "selector": "text=Avatar",
+          "rendered": "if (await this.avatarLocator.isVisible()) {"
+        },
+        {
+          "tag": "NClick",
+          "selector": "text=Avatar",
+          "rendered": "await this.avatarLocator.click();"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Profile icon clicked\");"
+        },
+        {
+          "tag": "NClick",
+          "selector": "text=Sign Out",
+          "rendered": "await this.signOutLocator.click();"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Signout option clicked\");"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Profile Icon not available\");"
+        },
+        {
+          "tag": "NCheckState",
+          "selector": "text=Are you sure you want to sign out?",
+          "rendered": "if (await this.areYouSureYouWantToLocator.isVisible()) {"
+        },
+        {
+          "tag": "NClick",
+          "selector": "text=OK",
+          "rendered": "await this.okLocator.click();"
+        },
+        {
+          "tag": "StepStatus",
+          "selector": null,
+          "rendered": "console.log('[STEP] ' + 'Validate Logout is successful' + ': ' + 'Logout successful');"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Ok Button clicked\");"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Logout popup not appeared\");"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Common\\NavigateToApplication.xaml",
+      "output": "src/pages/navigate-to-application.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 8,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "sequence.variables",
+        "multiple.assign",
+        "multiple.assign",
+        "nclick",
+        "nclick",
+        "nclick",
+        "ntypeinto",
+        "nclick"
+      ],
+      "action_records": [
+        {
+          "tag": "Sequence.Variables",
+          "selector": null,
+          "rendered": "let Title = '';\nlet SubTitle = '';\nlet TestID = '';"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "Title = in_AppTitle;"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "SubTitle = in_AppSubTitle;"
+        },
+        {
+          "tag": "NClick",
+          "selector": "#userActionsMenuHeaderButton",
+          "rendered": "await this.userActionsMenuHeaderButtonLocator.click();"
+        },
+        {
+          "tag": "NClick",
+          "selector": "#sapUshellUserActionsMenuPopover-3-openCatalogBtn",
+          "rendered": "await this.sapUshellUserActionsMenuPopoverLocator.click();"
+        },
+        {
+          "tag": "NClick",
+          "selector": "#sapMenu-button",
+          "rendered": "await this.sapMenuButtonLocator.click();"
+        },
+        {
+          "tag": "NTypeInto",
+          "selector": "#appFinderSearch",
+          "rendered": "await this.appFinderSearchLocator.fill(`${Title}[k(enter)]`);"
+        },
+        {
+          "tag": "NClick",
+          "selector": ".sap.ushell.ui.appfinder.AppBoxInternal",
+          "rendered": "await this.sapUshellUiAppfinderAppBoxLocator.click();"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Framework Support\\ReadComponentTestData.xaml",
+      "output": "src/pages/read-component-test-data.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 3,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "log.message",
+        "read.range",
+        "log.message"
+      ],
+      "action_records": [
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Reading data from sheet : \"+ in_SheetName);"
+        },
+        {
+          "tag": "ReadRange",
+          "selector": null,
+          "rendered": "// TODO: load test data from 'TestData\\Input.xlsx' sheet in_SheetName into a TypeScript fixture"
+        },
+        {
+          "tag": "LogMessage",
+          "selector": null,
+          "rendered": "console.log(\"Data uploaded succesfully to data table\");"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Framework Support\\Setup.xaml",
+      "output": "src/pages/setup.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 5,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "kill.process",
+        "multiple.assign",
+        "multiple.assign",
+        "create.report",
+        "start.suite"
+      ],
+      "action_records": [
+        {
+          "tag": "KillProcess",
+          "selector": null,
+          "rendered": "// browser lifecycle managed by Playwright fixtures (was: kill process ''chrome.exe'')"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "let FolderPath = 'C:\\\\UiPathPOC';"
+        },
+        {
+          "tag": "MultipleAssign",
+          "selector": null,
+          "rendered": "let FilePath = `${env.folderPath}/${env.testcaseName + \".xlsx\"}`;"
+        },
+        {
+          "tag": "CreateReport",
+          "selector": null,
+          "rendered": "// reporting handled by the Playwright HTML reporter (was: CreateReport 'GlobalVariablesNamespace.GlobalVariables.TestcaseName')"
+        },
+        {
+          "tag": "StartSuite",
+          "selector": null,
+          "rendered": "// reporting handled by the Playwright HTML reporter (was: StartSuite ''Iteration 1'')"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Reusable components\\Framework Support\\Teardown.xaml",
+      "output": "src/pages/teardown.page.ts",
+      "kind": "page-object",
+      "mapped_actions": 1,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "kill.process"
+      ],
+      "action_records": [
+        {
+          "tag": "KillProcess",
+          "selector": null,
+          "rendered": "// browser lifecycle managed by Playwright fixtures (was: kill process ''chrome.exe'')"
+        }
+      ]
+    },
+    {
+      "source": "..\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject\\Testcases\\OrderToCash.xaml",
+      "output": "tests/order-to-cash.spec.ts",
+      "kind": "test-spec",
+      "mapped_actions": 6,
+      "unmatched_lines": 0,
+      "action_ids": [
+        "invoke.page.object",
+        "invoke.page.object",
+        "invoke.page.object",
+        "invoke.page.object",
+        "invoke.page.object",
+        "invoke.page.object"
+      ],
+      "action_records": [
+        {
+          "tag": "InvokeWorkflowFile",
+          "selector": null,
+          "rendered": "await loginPage.login();"
+        },
+        {
+          "tag": "InvokeWorkflowFile",
+          "selector": null,
+          "rendered": "await navigateToApplicationPage.navigateToApplication({ in_AppSubTitle: 'VA01', in_AppTitle: 'Create Sales Orders' });"
+        },
+        {
+          "tag": "InvokeWorkflowFile",
+          "selector": null,
+          "rendered": "await createSalesOrderPage.createSalesOrder();"
+        },
+        {
+          "tag": "InvokeWorkflowFile",
+          "selector": null,
+          "rendered": "await navigateToApplicationPage.navigateToApplication({ in_AppSubTitle: 'With Order Reference', in_AppTitle: 'Create Outbound Delivery' });"
+        },
+        {
+          "tag": "InvokeWorkflowFile",
+          "selector": null,
+          "rendered": "await createOBDPage.createOBD({ in_sheetName: 'CreateDelivery' });"
+        },
+        {
+          "tag": "InvokeWorkflowFile",
+          "selector": null,
+          "rendered": "await logoutPage.logout();"
+        }
+      ]
+    }
+  ]
+}

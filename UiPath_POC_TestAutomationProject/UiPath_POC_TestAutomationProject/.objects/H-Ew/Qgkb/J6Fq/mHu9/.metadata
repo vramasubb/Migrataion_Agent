@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Success Message Bar Out…",
+  "Type": "Element",
+  "Id": "mHu9PfthHkeQ6HVcYlndvA",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/mHu9PfthHkeQ6HVcYlndvA",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/J6FqrCbGIEaAuPfKioeXZA",
+  "Created": "2026-07-29T09:17:04.0052284Z",
+  "Updated": "2026-07-29T09:17:04.0052284Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

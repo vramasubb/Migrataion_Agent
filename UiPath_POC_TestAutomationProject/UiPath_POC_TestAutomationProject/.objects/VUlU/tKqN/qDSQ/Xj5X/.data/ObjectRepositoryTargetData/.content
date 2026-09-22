@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="I4EYApsoXU6uHYmLqIgfvg" Reference="r0K4kMDipESog5sWOqxlQQ/Xj5Xe6MqwE21DfU0dfzx9g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" ContentHash="3OB3ZG_l-kOT5KFImSprWQ" DesignTimeRectangle="789, 624, 360, 50" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='LOGIN_LINK' tag='BUTTON' /&gt;" Guid="ac9d4426-8440-417d-909f-4bfe85896e27" Reference="r0K4kMDipESog5sWOqxlQQ/Xj5Xe6MqwE21DfU0dfzx9g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="a20715b1e36d540e4cb98d8da954e640.jpg" xmlns="">09PSy_IoBY0mn5g--NeiNlQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

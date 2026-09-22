@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Sales Org",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "qCnkgydq_0e1Loz3YxLyGw",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/qCnkgydq_0e1Loz3YxLyGw",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/WfbBQWpesUetZDYaVuDo4Q",
+  "Created": "2026-07-29T07:20:11.2190446Z",
+  "Updated": "2026-07-29T09:01:43.4792464Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

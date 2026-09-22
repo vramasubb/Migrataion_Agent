@@ -27,6 +27,7 @@ Scan all source files based on the tool type:
 | **Cypress** | `cypress/e2e/**/*.cy.{js,ts}`, `commands.*`, fixtures, `cypress.config.*` |
 | **Robot Framework** | `**/*.robot`, `**/*.resource`, variable files |
 | **UFT/QTP** | Action `.mts/.vbs` files, Object Repository files |
+| **UiPath Studio** | `Testcases/**/*.xaml`, `Reusable components/**/*.xaml`, `project.json` |
 
 ---
 

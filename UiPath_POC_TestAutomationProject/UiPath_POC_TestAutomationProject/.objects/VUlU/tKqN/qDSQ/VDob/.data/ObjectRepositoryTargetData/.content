@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="enW1XRDexU-ahqwUwWFrog" Reference="r0K4kMDipESog5sWOqxlQQ/VDob2SNTHU6RRfGmWHdBPA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" ContentHash="Kh1CXtufhEeldAJPZOMoIw" DesignTimeRectangle="789, 395, 360, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='USERNAME_FIELD-inner' tag='INPUT' /&gt;" Guid="52120b5c-ff5e-4bf9-9664-4bc039436cce" Reference="r0K4kMDipESog5sWOqxlQQ/VDob2SNTHU6RRfGmWHdBPA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="a73af6033fdf2fd3637bb1162cc1c123.jpg" xmlns="">0KfHv9u08kkGFBeMRbuh8ng</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

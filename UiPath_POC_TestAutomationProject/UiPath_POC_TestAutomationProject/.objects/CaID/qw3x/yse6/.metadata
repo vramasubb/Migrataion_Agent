@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Overview Screen",
+  "Type": "Screen",
+  "Id": "yse6wawKnki08-OtPdV1oA",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/yse6wawKnki08-OtPdV1oA",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/qw3x-Ngmzk-BV6QA-LPd-A",
+  "Created": "2026-07-29T07:24:40.8354053Z",
+  "Updated": "2026-07-29T07:29:12.2963956Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

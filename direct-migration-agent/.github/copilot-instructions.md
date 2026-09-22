@@ -37,6 +37,7 @@ Source Framework
 | 2 | `#cypress-direct-migration` | "Migrate the Cypress project directly" |
 | 3 | `#robot-direct-migration` | "Migrate the Robot Framework project directly" |
 | 4 | `#uft-direct-migration` | "Migrate the UFT project directly" |
+| 5 | `#uipath-direct-migration` | "Migrate the UiPath project directly" |
 
 > Each orchestrator runs: PRE-FLIGHT -> TRANSLATE -> RUN -> HEAL -> EVIDENCE -> GATE 1
 
@@ -52,8 +53,6 @@ Source Framework
 | 8 | `#playwright-healer` | Fix failing Playwright tests after generation | "Fix failing Playwright tests in WebLoginAndCart" |
 | 9 | `#playwright-direct-generator` | Alternative generator (same as #7, different entry point) | "Generate Playwright tests from [tool] source directly" |
 
----
-
 ## Typical End-to-End Workflow
 
 ```
@@ -68,9 +67,9 @@ STEP 2 — Analyze (optional, for quick source inventory)
    Output: Chat summary — test count, locator types, risks (no files written)
 
 STEP 3 — Migrate (pick your tool)
-   Attach: #selenium-direct-migration  (or cypress / robot / uft variant)
-   Type:   "Migrate the Selenium framework directly"
-   Output: src/modules/<feature>/ + analysis/MIGRATION-EVIDENCE.md
+   Attach: #selenium-direct-migration  (or cypress / robot / uft / uipath variant)
+   Type:   "Migrate the Selenium framework directly"  (or "Migrate the UiPath project directly")
+   Output: src/modules/<feature>/ + analysis/MIGRATION-EVIDENCE.md (+ .html view)
 
 STEP 4 — Fix failures (if any tests fail)
    Attach: #playwright-healer
@@ -84,20 +83,25 @@ STEP 4 — Fix failures (if any tests fail)
 
 | File | Purpose |
 |---|---|
-| `selenium-source.json` | Set source path + features here first |
+| `selenium-source.json` | Set source path + features here first (Selenium/Cypress/Robot/UFT) |
+| `uipath-source.json` | Set source path here first for UiPath Studio (XAML) projects |
 | `migration-source.json` | Migration strategy = "direct", output folder |
 | `agents/` | All agent files (visible in Explorer) |
-| `.github/prompts/` | Same agent files (Copilot Chat discovery location) |
+| `agents/_shared/playwright-target-pipeline.md` | **Shared skill/instructions** — the common RUN → HEAL → EVIDENCE → GATE 1 pipeline, output project shape, and evidence-report contract used identically by all 5 `*-direct-migration` agents (only PRE-FLIGHT/TRANSLATE differ per source) |
+| `.github/prompts/` | Same agent files (Copilot Chat discovery location — must stay in sync with `agents/`) |
 
 ---
 
-## Output Project
+## Output Projects
 
-Generated Playwright framework goes to `../sawslab-playwright-dm/`
+| Source | Output project |
+|---|---|
+| Selenium (`selenium-source.json`) | `../sawslab-playwright-dm/` |
+| UiPath (`uipath-source.json`) | `../uipath-playwright-dm/` |
 
-Run it independently:
+Run either independently:
 ```
-cd ../sawslab-playwright-dm
+cd ../sawslab-playwright-dm   (or ../uipath-playwright-dm)
 npm install
 npx playwright install chromium
 npm test

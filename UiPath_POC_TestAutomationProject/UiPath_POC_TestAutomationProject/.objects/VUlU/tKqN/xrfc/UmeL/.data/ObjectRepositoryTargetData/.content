@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UX8mu7AQUUWZvRvEUXXOIw" Reference="r0K4kMDipESog5sWOqxlQQ/UmeLPzWrPkGXgjj-TZFkCg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" ContentHash="d_OkXvOQNkqUrcu2cUbJeQ" DesignTimeRectangle="1479, 569, 355, 23" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='sapUshellUserActionsMenuPopover-3-openCatalogBtn' /&gt;&lt;webctrl shadowhostid='sapUshellUserActionsMenuPopover-3-openCatalogBtn' tag='DIV' innertext='App Finder' idx='1' /&gt;" Guid="ca9cfcea-0318-4d4a-875c-cf60b6979229" Reference="r0K4kMDipESog5sWOqxlQQ/UmeLPzWrPkGXgjj-TZFkCg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="1386e73b51e6543541fed00a6d6cafa7.jpg" xmlns="">0NxCKjrcwYkiSVvSv7QyUkw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -17,6 +17,11 @@ Run it **yourself, inline** — do not delegate to other agents.
 > ❌ Gate 1: business review
 > The source code IS the specification. Start writing Playwright TypeScript immediately after pre-flight.
 
+> **Read [`_shared/playwright-target-pipeline.md`](../../agents/_shared/playwright-target-pipeline.md) first.**
+> It defines the common RUN → HEAL → EVIDENCE → GATE 1 steps, output project shape, and the mandatory
+> evidence-report contract shared by every `*-direct-migration` agent (Selenium/Cypress/Robot/UFT/UiPath) —
+> only the PRE-FLIGHT and TRANSLATE steps below are Selenium-specific.
+
 ## Migration Path
 
 ```

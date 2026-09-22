@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rh8kWQR5ZkiPu0fB_gMUmA" Reference="TsEJqrJ-B0W_Eu2XLJOwUQ/I_pwerR_PkyJALoIPr5Khg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1724, 1084, 63, 38" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia name='Save*' /&gt;" Guid="896dea44-47f9-479d-a272-1e0c98040e1e" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="cfba8f90efcbb79b9f8269b23e4b0f08.jpg" xmlns="">cfba8f90efcbb79b9f8269b23e4b0f08.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

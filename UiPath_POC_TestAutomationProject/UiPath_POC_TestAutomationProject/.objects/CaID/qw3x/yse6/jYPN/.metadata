@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Material",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "jYPNLxdqUE-G3eoRQZ6fkw",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/jYPNLxdqUE-G3eoRQZ6fkw",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/yse6wawKnki08-OtPdV1oA",
+  "Created": "2026-07-29T07:29:12.6233424Z",
+  "Updated": "2026-07-29T07:29:12.6233424Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

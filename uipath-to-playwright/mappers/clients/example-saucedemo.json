@@ -1,0 +1,25 @@
+{
+  "propertyOverrides": {
+    "web": {
+      "TextField": {
+        "propertyPriority": ["testid", "automationid", "id", "aaname", "name", "cls", "class", "tag"]
+      }
+    }
+  },
+  "actionOverrides": {
+    "web": {
+      "add": [
+        {
+          "id": "saucedemo.data-test.click",
+          "standardActionType": "Click",
+          "objectType": "Button",
+          "tag": "ClickDataTest",
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "await page.getByTestId('{selector}').click();"
+        }
+      ],
+      "replace": [],
+      "remove": []
+    }
+  }
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Sold To",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "kSyf1iwKNUmSJ0ApUrFxpQ",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/kSyf1iwKNUmSJ0ApUrFxpQ",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/yse6wawKnki08-OtPdV1oA",
+  "Created": "2026-07-29T07:29:12.4226573Z",
+  "Updated": "2026-07-29T07:29:12.4226573Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

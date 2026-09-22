@@ -1,0 +1,17 @@
+﻿{
+  "Name": "AppFinder TextField",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "Rvf6Fr5g0kOYOZeVdlmaAQ",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/Rvf6Fr5g0kOYOZeVdlmaAQ",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/xrfcG0G1YUOboLfDUcOlDg",
+  "Created": "2026-07-29T06:54:33.0604061Z",
+  "Updated": "2026-07-29T07:03:47.1648603Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

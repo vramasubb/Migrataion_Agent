@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check Profile Icon",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "7OtBqEK8WEuIt3zQKiQO2w",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/7OtBqEK8WEuIt3zQKiQO2w",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/J6FqrCbGIEaAuPfKioeXZA",
+  "Created": "2026-07-29T09:55:51.4995756Z",
+  "Updated": "2026-07-29T09:55:51.4995756Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

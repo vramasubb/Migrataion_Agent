@@ -1,0 +1,91 @@
+{
+  "file": {
+    "source": "input\\LoginFlow.xaml",
+    "output": "evidence-demo\\tests\\LoginFlow.spec.ts",
+    "mapped_actions": 7,
+    "skipped_lines": 4,
+    "unmatched_lines": 0,
+    "action_ids": [
+      "sequence.variables",
+      "open.browser",
+      "type.into",
+      "type.into",
+      "click",
+      "element.exists",
+      "verify.expression.true"
+    ],
+    "action_records": [
+      {
+        "tag": "Sequence.Variables",
+        "selector": null,
+        "rendered": "let isProductsVisible = undefined;"
+      },
+      {
+        "tag": "OpenBrowser",
+        "selector": null,
+        "rendered": "await page.goto('https://www.saucedemo.com');"
+      },
+      {
+        "tag": "TypeInto",
+        "selector": "#user-name",
+        "rendered": "await page.locator('#user-name').fill('standard_user');"
+      },
+      {
+        "tag": "TypeInto",
+        "selector": "#password",
+        "rendered": "await page.locator('#password').fill('secret_sauce');"
+      },
+      {
+        "tag": "Click",
+        "selector": "#login-button",
+        "rendered": "await page.locator('#login-button').click();"
+      },
+      {
+        "tag": "ElementExists",
+        "selector": "text=Products",
+        "rendered": "isProductsVisible = await page.locator('text=Products').isVisible();"
+      },
+      {
+        "tag": "VerifyExpression",
+        "selector": null,
+        "rendered": "expect(isProductsVisible).toBeTruthy();"
+      }
+    ]
+  },
+  "tokenUsage": {
+    "migrationConversion": {
+      "execution": "local-python",
+      "modelInvoked": false,
+      "billableInputTokens": 0,
+      "billableOutputTokens": 0,
+      "estimatedCostUsd": 0.0
+    },
+    "textEquivalentWorkload": {
+      "source": {
+        "files": 1,
+        "characters": 3899,
+        "estimatedTokens": 975
+      },
+      "generated": {
+        "files": 1,
+        "characters": 733,
+        "estimatedTokens": 184
+      },
+      "estimationMethod": "characters/4",
+      "billable": false
+    },
+    "optionalAgentAssistance": {
+      "model": "claude-sonnet",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "inputRateUsdPerMillion": 3.0,
+      "outputRateUsdPerMillion": 15.0,
+      "estimatedCostUsd": 0.0,
+      "usageSource": "not-supplied"
+    },
+    "totalKnownBillableTokens": 0,
+    "totalEstimatedCostUsd": 0.0,
+    "note": "Text-equivalent workload is an estimate, not provider-billed token usage. Actual agent usage must come from the provider/API response."
+  }
+}

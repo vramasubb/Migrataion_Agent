@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Customer reference",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "q7ew5iqUYUKKr128wjsFUg",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/q7ew5iqUYUKKr128wjsFUg",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/yse6wawKnki08-OtPdV1oA",
+  "Created": "2026-07-29T07:29:12.5204906Z",
+  "Updated": "2026-07-29T07:29:12.5204906Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

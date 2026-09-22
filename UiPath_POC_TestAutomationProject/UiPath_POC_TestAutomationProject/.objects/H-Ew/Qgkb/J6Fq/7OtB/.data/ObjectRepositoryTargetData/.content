@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OxnuX76Utk2PimegdBkkwQ" Reference="TsEJqrJ-B0W_Eu2XLJOwUQ/u0lEVR6Rr0u4oTVXZJLT1A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1824, 147, 46, 46" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia cls='ui5-avatar-root' name='Avatar*' /&gt;" Guid="49d22859-8dc9-462a-8145-edeae9a65f49" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8f86b0762b0fded9e83cf32fa17b6972.jpg" xmlns="">8f86b0762b0fded9e83cf32fa17b6972.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

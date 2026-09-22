@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YJAHePcMwUeSxHbgj0WVLA" Reference="TsEJqrJ-B0W_Eu2XLJOwUQ/DyRxjvbwl0K8fpAVmzGr4w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1772, 1084, 105, 38" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia name='Continue*' /&gt;" Guid="5a8f78dd-a42d-4538-b335-29397c7fdf4b" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="6926f8a25c6b4e04d89f3495a99b816c.jpg" xmlns="">6926f8a25c6b4e04d89f3495a99b816c.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -13,6 +13,11 @@ Run it **yourself, inline** — do not delegate to other agents.
 > No analysis docs. No user stories. No first gate.
 > Do NOT infer tests from the live application.
 
+> **Read [`_shared/playwright-target-pipeline.md`](../../agents/_shared/playwright-target-pipeline.md) first.**
+> It defines the common RUN → HEAL → EVIDENCE → GATE 1 steps, output project shape, and the mandatory
+> evidence-report contract shared by every `*-direct-migration` agent (Selenium/Cypress/Robot/UFT/UiPath) —
+> only the PRE-FLIGHT and TRANSLATE steps below are Cypress-specific.
+
 ## Migration Path
 
 ```

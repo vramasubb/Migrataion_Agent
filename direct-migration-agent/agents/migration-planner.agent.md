@@ -23,6 +23,7 @@ Scan all relevant source files:
 - Cypress: `cypress/e2e/**/*.cy.*`, `commands.*`, fixtures
 - Robot: `**/*.robot`, `**/*.resource`
 - UFT: action files, OR files
+- UiPath: `Testcases/**/*.xaml`, `Reusable components/**/*.xaml`, `project.json`
 
 Count:
 - Number of features / test suites

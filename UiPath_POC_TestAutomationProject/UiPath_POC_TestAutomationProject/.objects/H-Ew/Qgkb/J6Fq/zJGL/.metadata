@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Sign Out",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "zJGL2CYkXUeVMpAlg63_5g",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/zJGL2CYkXUeVMpAlg63_5g",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/J6FqrCbGIEaAuPfKioeXZA",
+  "Created": "2026-07-29T09:57:12.2231408Z",
+  "Updated": "2026-07-29T09:57:12.2231408Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

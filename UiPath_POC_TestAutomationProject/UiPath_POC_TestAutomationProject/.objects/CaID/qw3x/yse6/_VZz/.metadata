@@ -1,0 +1,13 @@
+﻿{
+  "Name": "SalesOrderNumberMsg",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "_VZzFIbuJUa0q6tD_HRuxw",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/_VZzFIbuJUa0q6tD_HRuxw",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/yse6wawKnki08-OtPdV1oA",
+  "Created": "2026-07-29T07:52:42.8083456Z",
+  "Updated": "2026-07-29T07:52:42.8083456Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

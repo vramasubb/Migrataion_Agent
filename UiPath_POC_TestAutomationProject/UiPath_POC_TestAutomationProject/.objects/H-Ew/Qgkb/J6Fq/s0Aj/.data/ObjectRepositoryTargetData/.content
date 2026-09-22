@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AGSQXumOSUKZdDfypW6Vog" Reference="TsEJqrJ-B0W_Eu2XLJOwUQ/ciRujZ0W7Ua3EC_5KIeUEQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="425, 596, 165, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia cls='lsField__input' name='Order*' helpText='Order' /&gt;" Guid="01f2b45d-44e7-4ff7-a044-ccc9a83d73cf" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f476674a88616b84975a9d349f15b237.jpg" xmlns="">f476674a88616b84975a9d349f15b237.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Shipping Point",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "z5GHGn47F0mwtG-N1rpo0A",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/z5GHGn47F0mwtG-N1rpo0A",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/J6FqrCbGIEaAuPfKioeXZA",
+  "Created": "2026-07-29T09:15:20.2177156Z",
+  "Updated": "2026-07-29T09:15:20.2177156Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

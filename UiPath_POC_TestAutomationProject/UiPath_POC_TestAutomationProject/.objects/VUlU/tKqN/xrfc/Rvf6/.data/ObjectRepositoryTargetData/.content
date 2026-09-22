@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="EQkdQLK2a0ezL_OvylhdwQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" DesignTimeRectangle="1571, 182, 293, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='appFinderSearch' /&gt;" Guid="a8aa8cbf-1398-498a-8933-3c82909a06d7" ScopeSelectorArgument="&lt;html app='msedge.exe' title='App Finder' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="da25b36e8eab98cfc60bfed7c91ab000.jpg" xmlns="">0XJy-x2u6R0-CA6Ff4Lwfww</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

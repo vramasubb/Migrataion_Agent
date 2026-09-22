@@ -1,0 +1,16 @@
+{
+  "name": "uipath-poc-playwright-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "report": "npx playwright show-report playwright-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.0.0",
+    "dotenv": "^16.6.1",
+    "typescript": "^5.9.0"
+  }
+}

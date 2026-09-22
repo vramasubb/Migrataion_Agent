@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="r_Tup1YxuUOWS_LEWsJz5Q" Reference="r0K4kMDipESog5sWOqxlQQ/jbPClV-g4UOvCCL3M-xWUw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="newtab" ContentHash="byTPw0uMoEWk4ioG3yW1xw" DesignTimeRectangle="1097, 430, 90, 48" DesignTimeScaleFactor="1.25" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Select a certificate' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Select a certificate' role='dialog' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='OK' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='OK' /&gt;" Guid="b4b6769c-59f0-4925-b51f-55db120f9488" ImageBase64="" Reference="r0K4kMDipESog5sWOqxlQQ/jbPClV-g4UOvCCL3M-xWUw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

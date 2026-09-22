@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="F67kRS95jk-8hqItfyqiIA" Reference="r0K4kMDipESog5sWOqxlQQ/rpG-Xv4F1kGuRXowMchNog" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" DesignTimeRectangle="14, 109, 0, 0" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl ui5-class='sap.ushell.ui.appfinder.AppBoxInternal' ui5p-subtitle='{0}' ui5p-title='{1}' /&gt;&quot;, SubTitle, Title)]" Guid="e3b76487-59bc-4285-ae40-4c06d0999fef" ScopeSelectorArgument="&lt;html app='msedge.exe' title='App Finder' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="2ffed6ac9374584757a836152b53c618.jpg" xmlns="">0s-VoGgZh_kyvIyOHTrHtYQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="2">
+      <ObjectRepositoryVariableData Name="SubTitle" />
+      <ObjectRepositoryVariableData Name="Title" />
+    </scg:List>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

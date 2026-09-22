@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "sourceTool": "UiPath Studio (XAML)",
+  "targetTool": "Playwright TypeScript",
+  "engines": {
+    "web": {
+      "orLookup": {
+        "defaultPropertyPriority": ["testid", "automationid", "id", "aaname", "name", "innertext", "visibleinnertext", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"]
+      },
+      "objectTypes": {
+        "Element": {
+          "standardElementType": "Element",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testid", "automationid", "id", "aaname", "name", "innertext", "visibleinnertext", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"],
+          "defaultActionMode": "auto-wait"
+        },
+        "Button": {
+          "standardElementType": "Button",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testid", "automationid", "id", "aaname", "name", "innertext", "visibleinnertext", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"],
+          "defaultActionMode": "click"
+        },
+        "TextField": {
+          "standardElementType": "Text Field",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testid", "automationid", "id", "aaname", "name", "innertext", "visibleinnertext", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"],
+          "defaultActionMode": "fill"
+        },
+        "Checkbox": {
+          "standardElementType": "Checkbox",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testid", "automationid", "id", "aaname", "name", "innertext", "visibleinnertext", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"],
+          "defaultActionMode": "check"
+        },
+        "Select": {
+          "standardElementType": "Dropdown",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testid", "automationid", "id", "aaname", "name", "innertext", "visibleinnertext", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"],
+          "defaultActionMode": "selectOption"
+        },
+        "Link": {
+          "standardElementType": "Link",
+          "targetControlType": "Locator",
+          "propertyPriority": ["aaname", "name", "innertext", "visibleinnertext", "testid", "automationid", "id", "ui5-label", "ui5-tooltip", "ui5p-title", "cls", "class", "tag"],
+          "defaultActionMode": "click"
+        },
+        "Table": {
+          "standardElementType": "Table/Grid/DataGrid",
+          "targetControlType": "Locator",
+          "propertyPriority": ["testid", "automationid", "id", "aaname", "innertext", "visibleinnertext", "cls", "class", "tag"],
+          "defaultActionMode": "inspect"
+        }
+      },
+      "locatorStrategies": {
+        "testid": "[data-testid=\"{value}\"]",
+        "automationid": "[data-testid=\"{value}\"]",
+        "id": "#{value}",
+        "name": "text={value}",
+        "aaname": "text={value}",
+        "innertext": "text={value}",
+        "visibleinnertext": "text={value}",
+        "ui5-label": "text={value}",
+        "ui5-tooltip": "text={value}",
+        "ui5p-title": "text={value}",
+        "cls": ".{value}",
+        "class": ".{value}",
+        "tag": "{value}"
+      }
+    }
+  }
+}

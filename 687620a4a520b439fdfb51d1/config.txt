@@ -1,0 +1,4 @@
+{
+    "continue_on_fail": false,
+    "enable_video": true
+}

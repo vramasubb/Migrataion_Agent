@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+output/*
+!output/.gitkeep
+evidence-demo/node_modules/
+evidence-demo/test-results/
+evidence-demo/playwright-report/

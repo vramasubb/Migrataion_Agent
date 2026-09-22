@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Distribution Channel",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "67fJdAZpJ0SLPj4aq8iiTg",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/67fJdAZpJ0SLPj4aq8iiTg",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/WfbBQWpesUetZDYaVuDo4Q",
+  "Created": "2026-07-29T07:20:11.2824125Z",
+  "Updated": "2026-07-29T09:01:43.2496898Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

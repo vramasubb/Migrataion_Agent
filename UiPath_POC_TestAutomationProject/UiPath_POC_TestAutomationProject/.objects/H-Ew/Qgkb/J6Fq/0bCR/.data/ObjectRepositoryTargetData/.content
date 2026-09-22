@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="paPv5p8T2kKvVi9JZWGXEg" Reference="TsEJqrJ-B0W_Eu2XLJOwUQ/vIuSHPsE2k-j2ebajeBzOg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="755, 621, 321, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia name='Are you sure you want to sign out?' role='text' /&gt;" Guid="60902728-2d65-410b-ab82-fcac0c91f38c" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="fbdfc9498787067680dc85150fa50d39.jpg" xmlns="">fbdfc9498787067680dc85150fa50d39.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

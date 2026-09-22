@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Common Screens",
+  "Type": "App",
+  "Id": "VUlUfbth_0O0Um56FzbOvg",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/VUlUfbth_0O0Um56FzbOvg",
+  "Created": "2026-07-29T06:42:29.5251402Z",
+  "Updated": "2026-07-29T08:20:37.4022441Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

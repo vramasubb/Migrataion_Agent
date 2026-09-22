@@ -1,0 +1,6 @@
+{
+  "Name": "UiPath_POC_TestAutomationProject",
+  "ProjectType": "Tests",
+  "Description": "Test Automation Project",
+  "MainFile": "Main.xaml"
+}

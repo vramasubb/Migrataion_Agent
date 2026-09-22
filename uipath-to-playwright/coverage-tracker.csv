@@ -1,0 +1,32 @@
+Source Tool,Target Tool,Kind,Standard Type,Literal Source,Literal Target,Mapper Path,Status
+UiPath Studio (XAML),Playwright TypeScript,Element,Element,Element,Locator,engines.web.objectTypes.Element,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Element,Button,Button,Locator,engines.web.objectTypes.Button,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Element,Text Field,TextField,Locator,engines.web.objectTypes.TextField,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Element,Checkbox,Checkbox,Locator,engines.web.objectTypes.Checkbox,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Element,Dropdown,Select,Locator,engines.web.objectTypes.Select,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Element,Link,Link,Locator,engines.web.objectTypes.Link,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Element,Table/Grid/DataGrid,Table,Locator,engines.web.objectTypes.Table,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Navigate,ui:OpenBrowser/ui:NavigateTo,page.goto,engines.web.actions.open.browser,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Click,ui:Click,locator.click,engines.web.actions.click,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Set/Type Text,ui:TypeInto,locator.fill,engines.web.actions.type.into,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Check,ui:CheckBox,locator.check/uncheck,engines.web.actions.checkbox.check.*,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Select,ui:SelectItem,locator.selectOption,engines.web.actions.select.item,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Verify Exists,ui:ElementExists,locator.isVisible,engines.web.actions.element.exists,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Get Text,ui:GetText,locator.innerText,engines.web.actions.get.text,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Verify Expression,ui:VerifyExpression,expect.toBeTruthy/toBeFalsy,engines.web.actions.verify.expression.*,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Log Message,ui:LogMessage,console.log,engines.web.actions.log.message,Mapper Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Invoke Reusable Component,ui:InvokeWorkflowFile,TODO inline page-object method,engines.web.actions.invoke.workflow.file,Needs Agent Review
+UiPath Studio (XAML),Playwright TypeScript,Action,Click (Modern),uix:NClick,locator.click,engines.web.actions.nclick,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Set/Type Text (Modern),uix:NTypeInto,locator.fill,engines.web.actions.ntypeinto,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Get Text (Modern),uix:NGetText,locator.innerText,engines.web.actions.ngettext,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Scroll,uix:NMouseScroll,page.mouse.wheel,engines.web.actions.nmousescroll,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Control Flow,Conditional,uix:NCheckState,if/else on locator.isVisible,ProjectWalker._handle_ncheckstate,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Control Flow,Variable Assignment,ui:MultipleAssign / Assign,const/assignment,ProjectWalker._handle_multiple_assign / _handle_assign,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Control Flow,Loop,ui:ForEachRow,for...of,ProjectWalker._handle_for_each_row,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Control Flow,Disabled Block,ui:CommentOut,excluded from output,excludeSubtree,Fixture Validated
+UiPath Studio (XAML),Playwright TypeScript,Action,Get Orchestrator Asset,ui:GetRobotAsset,process.env.*,ProjectWalker._handle_get_robot_asset,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Get Orchestrator Credential,ui:GetRobotCredential,process.env.*,engines.web.actions.get.robot.credential,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Kill Process,ui:KillProcess,lifecycle comment,engines.web.actions.kill.process,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Regex Extract,ui:Matches,String.match,engines.web.actions.matches,Fixture Validated (real project)
+UiPath Studio (XAML),Playwright TypeScript,Action,Read Excel Range,ui:ReadRange,TODO fixture data,engines.web.actions.read.range,Needs Agent Review
+UiPath Studio (XAML),Playwright TypeScript,Reporting,Start Test / Step / Suite / Report,ra:StartTest/StepStatus/StartSuite/CreateReport,test title / console.log,engines.web.actions.step.status + StartTest handler,Fixture Validated (real project)

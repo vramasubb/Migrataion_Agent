@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check  'Outbound Delivery Screen",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "8SRiWeu7zESDGeXY3M7f3g",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/8SRiWeu7zESDGeXY3M7f3g",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/J6FqrCbGIEaAuPfKioeXZA",
+  "Created": "2026-07-29T09:16:35.5634633Z",
+  "Updated": "2026-07-29T09:16:35.5634633Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "uipathSourceRoot": "C:\\Users\\vramasubbu\\Framework\\selenium migration\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject",
+  "migrationOutputPath": "C:\\Users\\vramasubbu\\Framework\\selenium migration",
+  "activeProject": "direct-migration",
+  "migrationTool": "uipath-playwright-direct",
+  "projects": {
+    "direct-migration": {
+      "path": "C:\\Users\\vramasubbu\\Framework\\selenium migration\\UiPath_POC_TestAutomationProject\\UiPath_POC_TestAutomationProject",
+      "type": "XAML",
+      "language": "VisualBasic",
+      "migrationStrategy": "direct",
+      "outputFolder": "uipath-playwright-dm",
+      "testcases": ["OrderToCash"],
+      "reusableComponents": ["Login", "Logout", "NavigateToApplication", "CreateSalesOrder", "CreateOBD", "Setup", "Teardown", "ReadComponentTestData"],
+      "webBaseUrl": "https://usawsconl0576.us.deloitte.com:8100/sap/bc/ui2/flp",
+      "notes": "Direct migration — UiPath Studio (XAML) translated via uipath-to-playwright/scripts/project_convert.py. No analysis docs, no user stories. Target app requires VPN + Orchestrator credentials the team must supply for live execution."
+    }
+  }
+}

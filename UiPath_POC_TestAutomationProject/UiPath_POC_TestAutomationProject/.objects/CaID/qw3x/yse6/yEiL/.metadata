@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Quantity",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "yEiLfMMdpUOsT6uZfT4EBA",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/yEiLfMMdpUOsT6uZfT4EBA",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/yse6wawKnki08-OtPdV1oA",
+  "Created": "2026-07-29T07:29:12.7179324Z",
+  "Updated": "2026-07-29T07:29:12.7179324Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

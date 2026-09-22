@@ -1,0 +1,17 @@
+﻿{
+  "Name": "AppTile",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "rpG-Xv4F1kGuRXowMchNog",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/rpG-Xv4F1kGuRXowMchNog",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/xrfcG0G1YUOboLfDUcOlDg",
+  "Created": "2026-07-29T06:56:31.8326626Z",
+  "Updated": "2026-07-29T07:03:23.9087336Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

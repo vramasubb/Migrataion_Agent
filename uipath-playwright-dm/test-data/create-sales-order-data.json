@@ -1,0 +1,13 @@
+[
+  {
+    "CustomerRef": "2873824323",
+    "DistChannel": "11",
+    "Division": "11",
+    "Material": "10000082",
+    "OrderType": "ZOR",
+    "Quantity": "1",
+    "SalesOrderNo": "70000989",
+    "SalesOrg": "MD01",
+    "SoldTo": "400003"
+  }
+]

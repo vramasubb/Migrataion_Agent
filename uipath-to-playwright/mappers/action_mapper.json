@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "2.0",
+  "engines": {
+    "web": {
+      "excludeSubtree": [
+        "CommentOut",
+        "TextExpression.NamespacesForImplementation",
+        "TextExpression.ReferencesForImplementation",
+        "WorkflowViewStateService.ViewState",
+        "NApplicationCard.OCREngine",
+        "NApplicationCard.TargetApp",
+        "NClick.VerifyOptions",
+        "NTypeInto.VerifyOptions",
+        "NClick.Target",
+        "NTypeInto.Target",
+        "NCheckState.Target",
+        "ActivityAction.Argument",
+        "Members",
+        "NMouseScroll.SearchedElement"
+      ],
+      "noOpTags": ["NSetRuntimeBrowser"],
+      "actions": [
+        {
+          "id": "open.browser",
+          "standardActionType": "Navigate",
+          "objectType": "Element",
+          "tag": "OpenBrowser",
+          "valueTemplate": "await page.goto({attr:Url});"
+        },
+        {
+          "id": "navigate.to",
+          "standardActionType": "Navigate",
+          "objectType": "Element",
+          "tag": "NavigateTo",
+          "valueTemplate": "await page.goto({attr:Url});"
+        },
+        {
+          "id": "click",
+          "standardActionType": "Click",
+          "objectType": "Button",
+          "tag": "Click",
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "await page.locator('{selector}').click();"
+        },
+        {
+          "id": "type.into",
+          "standardActionType": "Set/Type Text",
+          "objectType": "TextField",
+          "tag": "TypeInto",
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "await page.locator('{selector}').fill({attr:Text});"
+        },
+        {
+          "id": "checkbox.check.true",
+          "standardActionType": "Check",
+          "objectType": "Checkbox",
+          "tag": "CheckBox",
+          "match": { "attribute": "Value", "in": ["True", "true"] },
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "await page.locator('{selector}').check();"
+        },
+        {
+          "id": "checkbox.check.false",
+          "standardActionType": "Uncheck",
+          "objectType": "Checkbox",
+          "tag": "CheckBox",
+          "match": { "attribute": "Value", "in": ["False", "false"] },
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "await page.locator('{selector}').uncheck();"
+        },
+        {
+          "id": "select.item",
+          "standardActionType": "Select",
+          "objectType": "Select",
+          "tag": "SelectItem",
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "await page.locator('{selector}').selectOption({attr:Item});"
+        },
+        {
+          "id": "element.exists",
+          "standardActionType": "Verify Exists",
+          "objectType": "Element",
+          "tag": "ElementExists",
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "let {bareAttr:Result} = await page.locator('{selector}').isVisible();"
+        },
+        {
+          "id": "get.text",
+          "standardActionType": "Get Text",
+          "objectType": "Element",
+          "tag": "GetText",
+          "selector": { "mode": "attribute", "attributes": ["Selector"] },
+          "valueTemplate": "let {bareAttr:Result} = await page.locator('{selector}').innerText();"
+        },
+        {
+          "id": "verify.expression.true",
+          "standardActionType": "Verify Expression",
+          "objectType": "Element",
+          "tag": "VerifyExpression",
+          "match": { "attribute": "Expression", "endsWith": "True" },
+          "valueTemplate": "expect({exprVar:Expression}).toBeTruthy();"
+        },
+        {
+          "id": "verify.expression.false",
+          "standardActionType": "Verify Expression",
+          "objectType": "Element",
+          "tag": "VerifyExpression",
+          "match": { "attribute": "Expression", "endsWith": "False" },
+          "valueTemplate": "expect({exprVar:Expression}).toBeFalsy();"
+        },
+        {
+          "id": "log.message",
+          "standardActionType": "Log Message",
+          "objectType": "Element",
+          "tag": "LogMessage",
+          "valueTemplate": "console.log({attr:Message});"
+        },
+        {
+          "id": "invoke.workflow.file",
+          "standardActionType": "Invoke Reusable Component",
+          "objectType": "Element",
+          "tag": "InvokeWorkflowFile",
+          "valueTemplate": "// TODO: inline reusable component '{attr:WorkflowFileName}' as a Playwright page-object method"
+        },
+        {
+          "id": "nclick",
+          "standardActionType": "Click",
+          "objectType": "Button",
+          "tag": "NClick",
+          "selector": { "mode": "target", "anchorLocalNames": ["TargetAnchorable"], "attributes": ["FullSelectorArgument", "ScopeSelectorArgument"] },
+          "valueTemplate": "await page.locator('{selector}').click();"
+        },
+        {
+          "id": "ntypeinto",
+          "standardActionType": "Set/Type Text",
+          "objectType": "TextField",
+          "tag": "NTypeInto",
+          "selector": { "mode": "target", "anchorLocalNames": ["TargetAnchorable"], "attributes": ["FullSelectorArgument", "ScopeSelectorArgument"] },
+          "valueTemplate": "await page.locator('{selector}').fill({attr:Text,SecureText});"
+        },
+        {
+          "id": "ngettext",
+          "standardActionType": "Get Text",
+          "objectType": "Element",
+          "tag": "NGetText",
+          "selector": { "mode": "target", "anchorLocalNames": ["TargetAnchorable"], "attributes": ["FullSelectorArgument", "ScopeSelectorArgument"] },
+          "valueTemplate": "let {bareAttr:TextString,Result} = await page.locator('{selector}').innerText();"
+        },
+        {
+          "id": "matches",
+          "standardActionType": "Regex Extract",
+          "objectType": "Element",
+          "tag": "Matches",
+          "valueTemplate": "let {bareAttr:FirstMatch} = ({attr:Input}.match(/{rawAttr:Pattern}/) ?? [''])[0];"
+        },
+        {
+          "id": "nmousescroll",
+          "standardActionType": "Scroll",
+          "objectType": "Element",
+          "tag": "NMouseScroll",
+          "valueTemplate": "await page.mouse.wheel(0, {scrollDelta:Direction});"
+        },
+        {
+          "id": "nhover",
+          "standardActionType": "Hover",
+          "objectType": "Element",
+          "tag": "NHover",
+          "selector": { "mode": "target", "anchorLocalNames": ["TargetAnchorable"], "attributes": ["FullSelectorArgument", "ScopeSelectorArgument"] },
+          "valueTemplate": "await page.locator('{selector}').hover();"
+        },
+        {
+          "id": "nnavigatebrowser.close",
+          "standardActionType": "Navigate",
+          "objectType": "Element",
+          "tag": "NNavigateBrowser",
+          "match": { "attribute": "Action", "in": ["CloseTab", "ClosePage", "Close"] },
+          "valueTemplate": "await page.close();"
+        },
+        {
+          "id": "nnavigatebrowser.back",
+          "standardActionType": "Navigate",
+          "objectType": "Element",
+          "tag": "NNavigateBrowser",
+          "match": { "attribute": "Action", "in": ["GoBack", "Back"] },
+          "valueTemplate": "await page.goBack();"
+        },
+        {
+          "id": "nnavigatebrowser.forward",
+          "standardActionType": "Navigate",
+          "objectType": "Element",
+          "tag": "NNavigateBrowser",
+          "match": { "attribute": "Action", "in": ["GoForward", "Forward"] },
+          "valueTemplate": "await page.goForward();"
+        },
+        {
+          "id": "nnavigatebrowser.refresh",
+          "standardActionType": "Navigate",
+          "objectType": "Element",
+          "tag": "NNavigateBrowser",
+          "match": { "attribute": "Action", "in": ["Refresh", "Reload"] },
+          "valueTemplate": "await page.reload();"
+        },
+        {
+          "id": "rethrow",
+          "standardActionType": "Rethrow",
+          "objectType": "Element",
+          "tag": "Rethrow",
+          "valueTemplate": "throw error;"
+        },
+        {
+          "id": "get.robot.credential",
+          "standardActionType": "Get Credential",
+          "objectType": "Element",
+          "tag": "GetRobotCredential",
+          "valueTemplate": "const {bareAttr:Username} = process.env.UIPATH_USERNAME ?? ''; const {bareAttr:Password} = process.env.UIPATH_PASSWORD ?? '';"
+        },
+        {
+          "id": "kill.process",
+          "standardActionType": "Kill Process",
+          "objectType": "Element",
+          "tag": "KillProcess",
+          "valueTemplate": "// browser lifecycle managed by Playwright fixtures (was: kill process '{attr:ProcessName}')"
+        },
+        {
+          "id": "step.status",
+          "standardActionType": "Report Step",
+          "objectType": "Element",
+          "tag": "StepStatus",
+          "valueTemplate": "console.log('[STEP] ' + {attr:StepName} + ': ' + {attr:StepDescription});"
+        },
+        {
+          "id": "read.range",
+          "standardActionType": "Read Excel Range",
+          "objectType": "Element",
+          "tag": "ReadRange",
+          "valueTemplate": "// TODO: load test data from '{attr:WorkbookPath}' sheet {attr:SheetName} into a TypeScript fixture"
+        },
+        {
+          "id": "create.report",
+          "standardActionType": "Create Report",
+          "objectType": "Element",
+          "tag": "CreateReport",
+          "valueTemplate": "// reporting handled by the Playwright HTML reporter (was: CreateReport '{attr:ReportName}')"
+        },
+        {
+          "id": "start.suite",
+          "standardActionType": "Start Suite",
+          "objectType": "Element",
+          "tag": "StartSuite",
+          "valueTemplate": "// reporting handled by the Playwright HTML reporter (was: StartSuite '{attr:SuiteName}')"
+        }
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="CH64LszITUS8MYFGTBfWBQ" Reference="TsEJqrJ-B0W_Eu2XLJOwUQ/HPQN60cpMEWXaYOQCltytQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="65, 1079, 493, 48" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia cls='lsMessageBar lsMessageBar--nowrapping lsMessageBar--width-default lsMessageBar--ruleBottom lsMessageBar--transparent' name='Success Message Bar Outbound Delivery * has been saved' helpText='Outbound Delivery * has been saved' /&gt;" Guid="b570af79-65a7-406d-800c-bf7d792ad5f9" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3dd3dc0c007dc0698ea3f88cda454428.jpg" xmlns="">3dd3dc0c007dc0698ea3f88cda454428.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

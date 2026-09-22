@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Order Type",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "4wByW4c6_USx_ynHgmj4TQ",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/4wByW4c6_USx_ynHgmj4TQ",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/WfbBQWpesUetZDYaVuDo4Q",
+  "Created": "2026-07-29T07:20:11.1544499Z",
+  "Updated": "2026-07-29T09:01:43.3911518Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

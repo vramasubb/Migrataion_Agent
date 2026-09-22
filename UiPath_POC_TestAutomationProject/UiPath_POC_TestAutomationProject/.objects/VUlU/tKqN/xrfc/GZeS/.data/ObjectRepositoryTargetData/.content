@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Eiznhv8CMkm4p3_d9Cc56w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="usawsconl0576.us.deloitte.com/sap/bc/ui2/flp" DesignTimeRectangle="1820, 123, 38, 37" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='userActionsMenuHeaderButton' /&gt;&lt;webctrl shadowhostid='userActionsMenuHeaderButton' tag='DIV' /&gt;" Guid="cf50c8f0-e264-45c0-a9f9-4c227edf5422" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="d508e7a9f077e9cb85de6e0ded9e39d7.jpg" xmlns="">0Jt4BGktlk0214dK2eNRB9A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

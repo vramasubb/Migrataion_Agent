@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Division",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "13MEadaCBUOcQ-xIB3GxSA",
+  "Reference": "r0K4kMDipESog5sWOqxlQQ/13MEadaCBUOcQ-xIB3GxSA",
+  "ParentRef": "r0K4kMDipESog5sWOqxlQQ/WfbBQWpesUetZDYaVuDo4Q",
+  "Created": "2026-07-29T07:20:11.3502475Z",
+  "Updated": "2026-07-29T09:01:43.3213356Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

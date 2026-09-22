@@ -1,0 +1,96 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ModernAppFlow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <Sequence DisplayName="ModernAppFlow" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Username" />
+      <Variable x:TypeArguments="x:Boolean" Name="isProfileVisible" />
+    </Sequence.Variables>
+    <ra:StartTest ContinueOnError="{x:Null}" DisplayName="Start Test" sap2010:WorkflowViewState.IdRef="StartTest_1" Priority="Low" ReportId="[ReportId]" SuiteId="[SuiteID]" TestName="Modern App Flow" testId="[TestID]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ra:StartTest>
+    <uix:NSetRuntimeBrowser BrowserType="[NBrowserType.Chrome]" DisplayName="Set Runtime Browser" sap2010:WorkflowViewState.IdRef="NSetRuntimeBrowser_1" Version="V5" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[Username]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">"standard_user"</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Login" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="c28575e1-a7fe-44a1-91a6-551cceb496d4" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DisabledButton'" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_99" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable FullSelectorArgument="&lt;uia name='ShouldNotAppear' /&gt;" Version="V6" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'USERNAME'" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[Username]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable FullSelectorArgument="&lt;webctrl id='USERNAME_FIELD-inner' tag='INPUT' /&gt;" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" Version="V6" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions Mode="Appears" />
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log On'" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_5" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable FullSelectorArgument="&lt;webctrl id='LOGIN_LINK' tag='BUTTON' /&gt;" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" Version="V6" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="x:String" />
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NCheckState DisplayName="Check Profile Icon" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" IsLoose="True" Timeout="15" Version="V5">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="IfExists" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Profile icon visible&quot;]" sap2010:WorkflowViewState.IdRef="LogMessage_2" />
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.IfNotExists>
+        <Sequence DisplayName="IfNotExists" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Profile icon not available&quot;]" sap2010:WorkflowViewState.IdRef="LogMessage_3" />
+        </Sequence>
+      </uix:NCheckState.IfNotExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable FullSelectorArgument="&lt;uia cls='ui5-avatar-root' name='Avatar*' /&gt;" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='*' /&gt;" Version="V6" />
+      </uix:NCheckState.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NCheckState>
+  </Sequence>
+</Activity>
