@@ -34,8 +34,8 @@ jobs:
         env:
           CI: true
           BASE_URL: https://www.saucedemo.com/
-          SAUCEDEMO_USERNAME: standard_user
-          SAUCEDEMO_PASSWORD: secret_sauce
+          SAUCEDEMO_USERNAME: ${{ secrets.SAUCEDEMO_USERNAME }}
+          SAUCEDEMO_PASSWORD: ${{ secrets.SAUCEDEMO_PASSWORD }}
           API_BASE_URL: https://jsonplaceholder.typicode.com
 
       - name: Upload HTML report (on failure)
@@ -83,6 +83,6 @@ jobs:
         env:
           CI: true
           BASE_URL: https://www.saucedemo.com/
-          SAUCEDEMO_USERNAME: standard_user
-          SAUCEDEMO_PASSWORD: secret_sauce
+          SAUCEDEMO_USERNAME: ${{ secrets.SAUCEDEMO_USERNAME }}
+          SAUCEDEMO_PASSWORD: ${{ secrets.SAUCEDEMO_PASSWORD }}
           API_BASE_URL: https://jsonplaceholder.typicode.com
